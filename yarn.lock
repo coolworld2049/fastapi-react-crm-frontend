@@ -2424,6 +2424,11 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
+"@react-buddy/ide-toolbox@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@react-buddy/ide-toolbox/-/ide-toolbox-2.3.0.tgz#c0c2e38bf628bd299e01c219ae4a86a73ada6053"
+  integrity sha512-hTbWHBCSk1IsKI2aThPTBv95svfg99xB9aQQ+FBvLifqeplAuB5QjHVqVFh43n/GcjEWLKa2IWBfNq9BbyR09A==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"

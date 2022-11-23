@@ -12,6 +12,7 @@ import authProvider from "./providers/authProvider";
 import { basePath } from "./providers/env";
 import PostIcon from "@mui/icons-material/PostAdd";
 import PersonIcon from "@mui/icons-material/Person";
+import theme from "./theme";
 
 const httpClient = (url: string, options: any = {}) => {
   options.user = {
@@ -35,6 +36,7 @@ const App = () => {
       loginPage={LoginPage}
       history={createHistory()}
       layout={MyLayout}
+      theme={theme}
       dashboard={Dashboard}
     >
       <CustomRoutes>
