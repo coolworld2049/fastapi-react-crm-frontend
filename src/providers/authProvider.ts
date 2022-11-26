@@ -10,7 +10,7 @@ const authProvider = {
   login: async ({ email, password }: loginFormType) => {
     const formData = { username: email, password };
     const resp = await authApi.loginAccessToken(formData.username, formData.password);
-    localStorage.setItem("token", resp.data.access_token);
+    localStorage.setItem("token", <string>resp.data.access_token);
     return Promise.resolve();
   },
   logout: () => {

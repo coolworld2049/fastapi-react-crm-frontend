@@ -56,7 +56,7 @@ export const ProfileEdit = ({ ...props }) => {
   const { isLoading: isPermissionsLoading, permissions } = usePermissions();
   const redirect = useRedirect();
   if (!isPermissionsLoading && !permissions?.email) {
-    redirect("/login");
+    redirect("/login/access-token");
   }
   const [saving, setSaving] = useState(false);
   const { refreshProfile, profileVersion } = useProfile();
