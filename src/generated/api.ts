@@ -41,10 +41,163 @@ export interface BodyUpdateUserMeApiV1UsersMePut {
     'email'?: string;
     /**
      * 
-     * @type {string}
+     * @type {UserRole}
      * @memberof BodyUpdateUserMeApiV1UsersMePut
      */
-    'role'?: string;
+    'role'?: UserRole;
+}
+/**
+ * 
+ * @export
+ * @interface Company
+ */
+export interface Company {
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'sector'?: string;
+    /**
+     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
+     * @type {string}
+     * @memberof Company
+     */
+    'size'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'city'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'website'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    'create_date'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Company
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface CompanyCreate
+ */
+export interface CompanyCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'sector'?: string;
+    /**
+     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'size'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'city'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'website'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyCreate
+     */
+    'create_date'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CompanyUpdate
+ */
+export interface CompanyUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'sector'?: string;
+    /**
+     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'size'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'city'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'website'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanyUpdate
+     */
+    'create_date'?: string;
 }
 /**
  * 
@@ -59,6 +212,47 @@ export interface HTTPValidationError {
      */
     'detail'?: Array<ValidationError>;
 }
+/**
+ * 
+ * @export
+ * @interface ReportCreate
+ */
+export interface ReportCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof ReportCreate
+     */
+    'start_timestamp'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReportCreate
+     */
+    'end_timestamp'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ReportCreate
+     */
+    'id': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReportCreate
+     */
+    'ext'?: ReportCreateExtEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ReportCreateExtEnum {
+    Csv = 'csv',
+    Json = 'json'
+}
+
 /**
  * 
  * @export
@@ -96,11 +290,11 @@ export interface Task {
      */
     'description'?: string;
     /**
-     * required: [\'website_design\', \'ui_design\', \'phone_call\', \'copywriting\', \'other\']
+     * 
      * @type {string}
      * @memberof Task
      */
-    'type': string;
+    'status'?: string;
     /**
      * required: [\'high\', \'medium\', \'low\']
      * @type {string}
@@ -112,7 +306,7 @@ export interface Task {
      * @type {string}
      * @memberof Task
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {string}
@@ -136,7 +330,7 @@ export interface Task {
      * @type {Array<any>}
      * @memberof Task
      */
-    'meta'?: Array<any>;
+    'task_priority'?: Array<any>;
 }
 /**
  * 
@@ -175,11 +369,11 @@ export interface TaskCreate {
      */
     'description'?: string;
     /**
-     * required: [\'website_design\', \'ui_design\', \'phone_call\', \'copywriting\', \'other\']
+     * 
      * @type {string}
      * @memberof TaskCreate
      */
-    'type': string;
+    'status'?: string;
     /**
      * required: [\'high\', \'medium\', \'low\']
      * @type {string}
@@ -191,7 +385,7 @@ export interface TaskCreate {
      * @type {string}
      * @memberof TaskCreate
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {string}
@@ -242,11 +436,11 @@ export interface TaskUpdate {
      */
     'description'?: string;
     /**
-     * required: [\'website_design\', \'ui_design\', \'phone_call\', \'copywriting\', \'other\']
+     * 
      * @type {string}
      * @memberof TaskUpdate
      */
-    'type': string;
+    'status'?: string;
     /**
      * required: [\'high\', \'medium\', \'low\']
      * @type {string}
@@ -258,7 +452,7 @@ export interface TaskUpdate {
      * @type {string}
      * @memberof TaskUpdate
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {string}
@@ -328,7 +522,7 @@ export interface User {
      */
     'phone'?: string;
     /**
-     * required: [\'user\', \'admin\', \'manager\', \'ranker\', \'client\']
+     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
      * @type {string}
      * @memberof User
      */
@@ -350,31 +544,25 @@ export interface User {
      * @type {string}
      * @memberof User
      */
-    'first_name'?: string;
+    'full_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof User
      */
-    'last_name'?: string;
+    'username': string;
     /**
      * 
      * @type {string}
      * @memberof User
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {number}
      * @memberof User
      */
     'id'?: number;
-    /**
-     * 
-     * @type {Array<any>}
-     * @memberof User
-     */
-    'meta'?: Array<any>;
 }
 /**
  * 
@@ -395,7 +583,7 @@ export interface UserCreate {
      */
     'phone'?: string;
     /**
-     * required: [\'user\', \'admin\', \'manager\', \'ranker\', \'client\']
+     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
      * @type {string}
      * @memberof UserCreate
      */
@@ -417,19 +605,19 @@ export interface UserCreate {
      * @type {string}
      * @memberof UserCreate
      */
-    'first_name'?: string;
+    'full_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof UserCreate
      */
-    'last_name'?: string;
+    'username': string;
     /**
      * 
      * @type {string}
      * @memberof UserCreate
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {string}
@@ -437,6 +625,20 @@ export interface UserCreate {
      */
     'password': string;
 }
+/**
+ * An enumeration.
+ * @export
+ * @enum {string}
+ */
+
+export enum UserRole {
+    User = 'user',
+    AdminBase = 'admin_base',
+    ManagerBase = 'manager_base',
+    RankerBase = 'ranker_base',
+    ClientBase = 'client_base'
+}
+
 /**
  * 
  * @export
@@ -456,7 +658,7 @@ export interface UserUpdate {
      */
     'phone'?: string;
     /**
-     * required: [\'user\', \'admin\', \'manager\', \'ranker\', \'client\']
+     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
      * @type {string}
      * @memberof UserUpdate
      */
@@ -478,19 +680,19 @@ export interface UserUpdate {
      * @type {string}
      * @memberof UserUpdate
      */
-    'first_name'?: string;
+    'full_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof UserUpdate
      */
-    'last_name'?: string;
+    'username': string;
     /**
      * 
      * @type {string}
      * @memberof UserUpdate
      */
-    'create_date': string;
+    'create_date'?: string;
     /**
      * 
      * @type {string}
@@ -523,6 +725,419 @@ export interface ValidationError {
      */
     'type': string;
 }
+
+/**
+ * CompaniesApi - axios parameter creator
+ * @export
+ */
+export const CompaniesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new company.
+         * @summary Create Company
+         * @param {CompanyCreate} companyCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createCompany: async (companyCreate: CompanyCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'companyCreate' is not null or undefined
+            assertParamExists('createCompany', 'companyCreate', companyCreate)
+            const localVarPath = `/api/v1/companies/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(companyCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete a company.
+         * @summary Delete Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteCompany: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteCompany', 'id', id)
+            const localVarPath = `/api/v1/companies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Companies
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCompanies: async (sort?: string, range?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/companies/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get company by ID.
+         * @summary Read Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCompany: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readCompany', 'id', id)
+            const localVarPath = `/api/v1/companies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update a company.
+         * @summary Update Company
+         * @param {number} id 
+         * @param {CompanyUpdate} companyUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateCompany: async (id: number, companyUpdate: CompanyUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateCompany', 'id', id)
+            // verify required parameter 'companyUpdate' is not null or undefined
+            assertParamExists('updateCompany', 'companyUpdate', companyUpdate)
+            const localVarPath = `/api/v1/companies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(companyUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CompaniesApi - functional programming interface
+ * @export
+ */
+export const CompaniesApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CompaniesApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new company.
+         * @summary Create Company
+         * @param {CompanyCreate} companyCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createCompany(companyCreate: CompanyCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createCompany(companyCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete a company.
+         * @summary Delete Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteCompany(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCompany(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Companies
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readCompanies(sort?: string, range?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Company>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readCompanies(sort, range, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get company by ID.
+         * @summary Read Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readCompany(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readCompany(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update a company.
+         * @summary Update Company
+         * @param {number} id 
+         * @param {CompanyUpdate} companyUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateCompany(id: number, companyUpdate: CompanyUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateCompany(id, companyUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CompaniesApi - factory interface
+ * @export
+ */
+export const CompaniesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CompaniesApiFp(configuration)
+    return {
+        /**
+         * Create new company.
+         * @summary Create Company
+         * @param {CompanyCreate} companyCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createCompany(companyCreate: CompanyCreate, options?: any): AxiosPromise<Company> {
+            return localVarFp.createCompany(companyCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete a company.
+         * @summary Delete Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteCompany(id: number, options?: any): AxiosPromise<Company> {
+            return localVarFp.deleteCompany(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Companies
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCompanies(sort?: string, range?: string, options?: any): AxiosPromise<Array<Company>> {
+            return localVarFp.readCompanies(sort, range, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get company by ID.
+         * @summary Read Company
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCompany(id: number, options?: any): AxiosPromise<Company> {
+            return localVarFp.readCompany(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update a company.
+         * @summary Update Company
+         * @param {number} id 
+         * @param {CompanyUpdate} companyUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateCompany(id: number, companyUpdate: CompanyUpdate, options?: any): AxiosPromise<Company> {
+            return localVarFp.updateCompany(id, companyUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CompaniesApi - object-oriented interface
+ * @export
+ * @class CompaniesApi
+ * @extends {BaseAPI}
+ */
+export class CompaniesApi extends BaseAPI {
+    /**
+     * Create new company.
+     * @summary Create Company
+     * @param {CompanyCreate} companyCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CompaniesApi
+     */
+    public createCompany(companyCreate: CompanyCreate, options?: AxiosRequestConfig) {
+        return CompaniesApiFp(this.configuration).createCompany(companyCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete a company.
+     * @summary Delete Company
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CompaniesApi
+     */
+    public deleteCompany(id: number, options?: AxiosRequestConfig) {
+        return CompaniesApiFp(this.configuration).deleteCompany(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Tasks.
+     * @summary Read Companies
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CompaniesApi
+     */
+    public readCompanies(sort?: string, range?: string, options?: AxiosRequestConfig) {
+        return CompaniesApiFp(this.configuration).readCompanies(sort, range, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get company by ID.
+     * @summary Read Company
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CompaniesApi
+     */
+    public readCompany(id: number, options?: AxiosRequestConfig) {
+        return CompaniesApiFp(this.configuration).readCompany(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update a company.
+     * @summary Update Company
+     * @param {number} id 
+     * @param {CompanyUpdate} companyUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CompaniesApi
+     */
+    public updateCompany(id: number, companyUpdate: CompanyUpdate, options?: AxiosRequestConfig) {
+        return CompaniesApiFp(this.configuration).updateCompany(id, companyUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
 
 /**
  * DefaultApi - axios parameter creator
@@ -696,6 +1311,40 @@ export const LoginApiAxiosParamCreator = function (configuration?: Configuration
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Logout
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        logout: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/logout`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -720,6 +1369,16 @@ export const LoginApiFp = function(configuration?: Configuration) {
          */
         async loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TokenPayload>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Logout
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async logout(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.logout(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -747,6 +1406,15 @@ export const LoginApiFactory = function (configuration?: Configuration, basePath
         loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: any): AxiosPromise<TokenPayload> {
             return localVarFp.loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @summary Logout
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        logout(options?: any): AxiosPromise<any> {
+            return localVarFp.logout(options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -772,6 +1440,17 @@ export class LoginApi extends BaseAPI {
      */
     public loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: AxiosRequestConfig) {
         return LoginApiFp(this.configuration).loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Logout
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LoginApi
+     */
+    public logout(options?: AxiosRequestConfig) {
+        return LoginApiFp(this.configuration).logout(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -901,12 +1580,12 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * Retrieve Tasks.
          * @summary Read Tasks
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readTasks: async (skip?: number, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        readTasks: async (sort?: string, range?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/tasks/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -923,12 +1602,12 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
             // oauth required
             await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
 
-            if (skip !== undefined) {
-                localVarQueryParameter['skip'] = skip;
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
             }
 
 
@@ -1032,13 +1711,13 @@ export const TasksApiFp = function(configuration?: Configuration) {
         /**
          * Retrieve Tasks.
          * @summary Read Tasks
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readTasks(skip?: number, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Task>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readTasks(skip, limit, options);
+        async readTasks(sort?: string, range?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Task>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTasks(sort, range, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1096,13 +1775,13 @@ export const TasksApiFactory = function (configuration?: Configuration, basePath
         /**
          * Retrieve Tasks.
          * @summary Read Tasks
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readTasks(skip?: number, limit?: number, options?: any): AxiosPromise<Array<Task>> {
-            return localVarFp.readTasks(skip, limit, options).then((request) => request(axios, basePath));
+        readTasks(sort?: string, range?: string, options?: any): AxiosPromise<Array<Task>> {
+            return localVarFp.readTasks(sort, range, options).then((request) => request(axios, basePath));
         },
         /**
          * Update an task.
@@ -1164,14 +1843,14 @@ export class TasksApi extends BaseAPI {
     /**
      * Retrieve Tasks.
      * @summary Read Tasks
-     * @param {number} [skip] 
-     * @param {number} [limit] 
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TasksApi
      */
-    public readTasks(skip?: number, limit?: number, options?: AxiosRequestConfig) {
-        return TasksApiFp(this.configuration).readTasks(skip, limit, options).then((request) => request(this.axios, this.basePath));
+    public readTasks(sort?: string, range?: string, options?: AxiosRequestConfig) {
+        return TasksApiFp(this.configuration).readTasks(sort, range, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1236,17 +1915,57 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             };
         },
         /**
-         * Get a specific user by id.
-         * @summary Read User By Id
-         * @param {number} userId 
+         * Generate report by user id.
+         * @summary Create User Report
+         * @param {ReportCreate} reportCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUserById: async (userId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'userId' is not null or undefined
-            assertParamExists('readUserById', 'userId', userId)
-            const localVarPath = `/api/v1/users/{user_id}`
-                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+        createUserReport: async (reportCreate: ReportCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'reportCreate' is not null or undefined
+            assertParamExists('createUserReport', 'reportCreate', reportCreate)
+            const localVarPath = `/api/v1/users/report`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(reportCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get a specific user by id.
+         * @summary Read User By Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUserById: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readUserById', 'id', id)
+            const localVarPath = `/api/v1/users/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1308,14 +2027,52 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             };
         },
         /**
-         * Retrieve users.
-         * @summary Read Users
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * Generate report by user id.
+         * @summary Read User Report
+         * @param {string} filename 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUsers: async (skip?: number, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        readUserReport: async (filename: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'filename' is not null or undefined
+            assertParamExists('readUserReport', 'filename', filename)
+            const localVarPath = `/api/v1/users/report/{filename}`
+                .replace(`{${"filename"}}`, encodeURIComponent(String(filename)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsers: async (sort?: string, range?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/users/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1332,12 +2089,104 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             // oauth required
             await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
 
-            if (skip !== undefined) {
-                localVarQueryParameter['skip'] = skip;
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * roles: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
+         * @summary Read Users By Role
+         * @param {string} rolname 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsersByRole: async (rolname: string, sort?: string, range?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'rolname' is not null or undefined
+            assertParamExists('readUsersByRole', 'rolname', rolname)
+            const localVarPath = `/api/v1/users/role/{rolname}`
+                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users Employees
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsersEmployees: async (sort?: string, range?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/users/employees`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
             }
 
 
@@ -1354,18 +2203,18 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * Update a user.
          * @summary Update User
-         * @param {number} userId 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateUser: async (userId: number, userUpdate: UserUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'userId' is not null or undefined
-            assertParamExists('updateUser', 'userId', userId)
+        updateUser: async (id: number, userUpdate: UserUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateUser', 'id', id)
             // verify required parameter 'userUpdate' is not null or undefined
             assertParamExists('updateUser', 'userUpdate', userUpdate)
-            const localVarPath = `/api/v1/users/{user_id}`
-                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            const localVarPath = `/api/v1/users/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1455,14 +2304,25 @@ export const UsersApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Get a specific user by id.
-         * @summary Read User By Id
-         * @param {number} userId 
+         * Generate report by user id.
+         * @summary Create User Report
+         * @param {ReportCreate} reportCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readUserById(userId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readUserById(userId, options);
+        async createUserReport(reportCreate: ReportCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createUserReport(reportCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get a specific user by id.
+         * @summary Read User By Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readUserById(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUserById(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1476,27 +2336,63 @@ export const UsersApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Retrieve users.
-         * @summary Read Users
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * Generate report by user id.
+         * @summary Read User Report
+         * @param {string} filename 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readUsers(skip?: number, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsers(skip, limit, options);
+        async readUserReport(filename: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUserReport(filename, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readUsers(sort?: string, range?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsers(sort, range, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * roles: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
+         * @summary Read Users By Role
+         * @param {string} rolname 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readUsersByRole(rolname: string, sort?: string, range?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsersByRole(rolname, sort, range, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users Employees
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readUsersEmployees(sort?: string, range?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsersEmployees(sort, range, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * Update a user.
          * @summary Update User
-         * @param {number} userId 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateUser(userId: number, userUpdate: UserUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUser(userId, userUpdate, options);
+        async updateUser(id: number, userUpdate: UserUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUser(id, userUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1531,14 +2427,24 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
             return localVarFp.createUser(userCreate, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get a specific user by id.
-         * @summary Read User By Id
-         * @param {number} userId 
+         * Generate report by user id.
+         * @summary Create User Report
+         * @param {ReportCreate} reportCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUserById(userId: number, options?: any): AxiosPromise<User> {
-            return localVarFp.readUserById(userId, options).then((request) => request(axios, basePath));
+        createUserReport(reportCreate: ReportCreate, options?: any): AxiosPromise<void> {
+            return localVarFp.createUserReport(reportCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get a specific user by id.
+         * @summary Read User By Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUserById(id: number, options?: any): AxiosPromise<User> {
+            return localVarFp.readUserById(id, options).then((request) => request(axios, basePath));
         },
         /**
          * Get current user.
@@ -1550,26 +2456,59 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
             return localVarFp.readUserMe(options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve users.
-         * @summary Read Users
-         * @param {number} [skip] 
-         * @param {number} [limit] 
+         * Generate report by user id.
+         * @summary Read User Report
+         * @param {string} filename 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUsers(skip?: number, limit?: number, options?: any): AxiosPromise<Array<User>> {
-            return localVarFp.readUsers(skip, limit, options).then((request) => request(axios, basePath));
+        readUserReport(filename: string, options?: any): AxiosPromise<void> {
+            return localVarFp.readUserReport(filename, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsers(sort?: string, range?: string, options?: any): AxiosPromise<Array<User>> {
+            return localVarFp.readUsers(sort, range, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * roles: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
+         * @summary Read Users By Role
+         * @param {string} rolname 
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsersByRole(rolname: string, sort?: string, range?: string, options?: any): AxiosPromise<Array<User>> {
+            return localVarFp.readUsersByRole(rolname, sort, range, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve users.
+         * @summary Read Users Employees
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readUsersEmployees(sort?: string, range?: string, options?: any): AxiosPromise<Array<User>> {
+            return localVarFp.readUsersEmployees(sort, range, options).then((request) => request(axios, basePath));
         },
         /**
          * Update a user.
          * @summary Update User
-         * @param {number} userId 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateUser(userId: number, userUpdate: UserUpdate, options?: any): AxiosPromise<User> {
-            return localVarFp.updateUser(userId, userUpdate, options).then((request) => request(axios, basePath));
+        updateUser(id: number, userUpdate: UserUpdate, options?: any): AxiosPromise<User> {
+            return localVarFp.updateUser(id, userUpdate, options).then((request) => request(axios, basePath));
         },
         /**
          * Update own user.
@@ -1604,15 +2543,27 @@ export class UsersApi extends BaseAPI {
     }
 
     /**
-     * Get a specific user by id.
-     * @summary Read User By Id
-     * @param {number} userId 
+     * Generate report by user id.
+     * @summary Create User Report
+     * @param {ReportCreate} reportCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public readUserById(userId: number, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).readUserById(userId, options).then((request) => request(this.axios, this.basePath));
+    public createUserReport(reportCreate: ReportCreate, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).createUserReport(reportCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get a specific user by id.
+     * @summary Read User By Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UsersApi
+     */
+    public readUserById(id: number, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUserById(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1627,29 +2578,68 @@ export class UsersApi extends BaseAPI {
     }
 
     /**
-     * Retrieve users.
-     * @summary Read Users
-     * @param {number} [skip] 
-     * @param {number} [limit] 
+     * Generate report by user id.
+     * @summary Read User Report
+     * @param {string} filename 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public readUsers(skip?: number, limit?: number, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).readUsers(skip, limit, options).then((request) => request(this.axios, this.basePath));
+    public readUserReport(filename: string, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUserReport(filename, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve users.
+     * @summary Read Users
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UsersApi
+     */
+    public readUsers(sort?: string, range?: string, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUsers(sort, range, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * roles: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
+     * @summary Read Users By Role
+     * @param {string} rolname 
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UsersApi
+     */
+    public readUsersByRole(rolname: string, sort?: string, range?: string, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUsersByRole(rolname, sort, range, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve users.
+     * @summary Read Users Employees
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UsersApi
+     */
+    public readUsersEmployees(sort?: string, range?: string, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUsersEmployees(sort, range, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update a user.
      * @summary Update User
-     * @param {number} userId 
+     * @param {number} id 
      * @param {UserUpdate} userUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public updateUser(userId: number, userUpdate: UserUpdate, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).updateUser(userId, userUpdate, options).then((request) => request(this.axios, this.basePath));
+    public updateUser(id: number, userUpdate: UserUpdate, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).updateUser(id, userUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

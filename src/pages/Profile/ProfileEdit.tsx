@@ -8,7 +8,6 @@ import {
 import {
   TextInput,
   SimpleForm,
-  required,
   useNotify,
   SaveContextProvider,
   useGetIdentity,
@@ -17,7 +16,7 @@ import {
   Toolbar,
   SaveButton,
 } from "react-admin";
-import { userApi } from "../providers/env";
+import { userApi } from "../../providers/env";
 
 const ProfileContext = createContext({
   profileVersion: 0,
@@ -94,8 +93,10 @@ export const ProfileEdit = ({ ...props }) => {
       key={profileVersion}
     >
       <SimpleForm record={identity ? identity : {}} toolbar={<CustomToolbar />}>
-        <TextInput source="id" disabled />
-        <TextInput source="email" validate={required()} />
+        <TextInput source="email" />
+        <TextInput source="full_name"/>
+        <TextInput source="username" />
+        <TextInput source="phone" />
       </SimpleForm>
     </SaveContextProvider>
   );

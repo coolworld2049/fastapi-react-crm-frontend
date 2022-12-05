@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-buddy/ide-toolbox": "^2.3.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.4.3",
@@ -16,13 +17,14 @@
     "openapi-typescript-codegen": "^0.23.0",
     "ra-data-json-server": "^4.1.2",
     "ra-data-simple-rest": "^4.2.0",
+    "ra-input-rich-text": "^4.5.2",
     "react": "^17.0.2",
     "react-admin": "^4.2.2",
+    "react-datetime": "^3.2.0",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
-    "web-vitals": "^1.0.1",
-    "@react-buddy/ide-toolbox": "^2.3.0"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

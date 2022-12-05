@@ -1,26 +1,19 @@
-import simpleRestProvider from "ra-data-simple-rest";
-import { Admin, fetchUtils, Resource, CustomRoutes } from "react-admin";
-import { Route } from "react-router";
+import {Admin, CustomRoutes, Resource} from "react-admin";
+import {Route} from "react-router";
 import MyLayout from "./components/AdminLayout";
-import Dashboard from "./pages/Dashboard";
-import { TaskCreate, TaskEdit, TaskList} from "./pages/Task";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import {TaskCreate, TaskEdit, TaskList, TaskShow} from "./pages/Dashboard/Tasks/Task";
 import LoginPage from "./pages/Login";
-import { ProfileEdit } from "./pages/ProfileEdit";
-import { UserEdit, UserList } from "./pages/Users";
+import {ProfileEdit} from "./pages/Profile/ProfileEdit";
+import {UserCreate, UserEdit, UserList, UserShow} from "./pages/Dashboard/Users/Users";
 import authProvider from "./providers/authProvider";
-import { basePath } from "./providers/env";
-import PostIcon from "@mui/icons-material/PostAdd";
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import PersonIcon from "@mui/icons-material/Person";
-
-const httpClient = (url: string, options: any = {}) => {
-  options.user = {
-    authenticated: true,
-    token: `Bearer ${localStorage.getItem("token")}`,
-  };
-  return fetchUtils.fetchJson(url, options);
-};
-
-const dataProvider = simpleRestProvider(`${basePath}/api/v1`, httpClient);
+import {dataProvider} from "./providers/dataProvider";
+import {CompanyCreate, CompanyEdit, CompanyList, CompanyShow} from "./pages/Dashboard/Company/Company";
+import BusinessIcon from '@mui/icons-material/Business';
+import UserReportCreate from "./pages/Dashboard/Users/UsersReport";
+import {ClientEdit, ClientList, ClientShow} from "./pages/Dashboard/Clients/Client";
 
 const App = () => {
   return (
@@ -34,21 +27,47 @@ const App = () => {
       <CustomRoutes>
         <Route path="/my-profile" element={<ProfileEdit />} />
       </CustomRoutes>
-        <Resource
-          options={{ label: "Users" }}
-          name="users"
-          list={UserList}
-          edit={UserEdit}
-          icon={PersonIcon}
-        />
-        <Resource
-          name="tasks"
-          options={{ label: "Tasks" }}
-          list={TaskList}
-          edit={TaskEdit}
-          create={TaskCreate}
-          icon={PostIcon}
-        />
+      <Resource
+        options={{ label: "Users" }}
+        name="users"
+        list={UserList}
+        edit={UserEdit}
+        create={UserCreate}
+        show={UserShow}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Clients" }}
+        name="users/role/client_base"
+        list={ClientList}
+        edit={ClientEdit}
+        show={ClientShow}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Reports" }}
+        name="users/report"
+        list={UserReportCreate}
+        create={UserReportCreate}
+      />
+      <Resource
+        name="tasks"
+        options={{ label: "Tasks" }}
+        list={TaskList}
+        edit={TaskEdit}
+        create={TaskCreate}
+        show={TaskShow}
+        icon={AssignmentIcon}
+      />
+      <Resource
+        name="companies"
+        options={{ label: "Companies" }}
+        list={CompanyList}
+        edit={CompanyEdit}
+        create={CompanyCreate}
+        show={CompanyShow}
+        icon={BusinessIcon}
+      />
     </Admin>
   );
 };

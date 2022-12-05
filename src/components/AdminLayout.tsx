@@ -1,6 +1,7 @@
-import { UserMenu, MenuItemLink, AppBar, Layout, Logout } from "react-admin";
-import { ProfileProvider } from "../pages/ProfileEdit";
+import {UserMenu, MenuItemLink, AppBar, Layout, Logout} from "react-admin";
+import { ProfileProvider } from "../pages/Profile/ProfileEdit";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 const MyUserMenu = (props: any) => {
   // Forcing MenuItemLink to any because of some weird type mismatch, not sure what's going on
@@ -12,7 +13,7 @@ const MyUserMenu = (props: any) => {
         primaryText="My Profile"
         leftIcon={<SettingsIcon />}
       />
-      <Logout key="logout" />
+      <Logout key="logout"/>
     </UserMenu>
   );
 };
@@ -24,6 +25,7 @@ const MyAppBar = (props: any) => (
 const MyLayout = (props: any) => (
   <ProfileProvider>
     <Layout {...props} appBar={MyAppBar} />
+    <ReactQueryDevtools initialIsOpen={false} />
   </ProfileProvider>
 );
 
