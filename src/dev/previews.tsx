@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentPreview, Previews} from '@react-buddy/ide-toolbox';
 import {PaletteTree} from './palette';
 import App from "../App";
-import {UserCreate} from "../pages/Dashboard/Users/Users";
+import {UserCreate} from "../pages/Menu/Users/Users";
 
 const ComponentPreviews = () => {
     return (

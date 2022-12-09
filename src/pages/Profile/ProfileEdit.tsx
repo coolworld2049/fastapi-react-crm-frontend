@@ -62,7 +62,7 @@ export const ProfileEdit = ({ ...props }) => {
   const { isLoading: isUserIdentityLoading, identity } = useGetIdentity();
 
   const handleSave = useCallback(
-    (userUpdate) => {
+    (userUpdate: any) => {
       setSaving(true);
       userApi
         .updateUser(userUpdate.id, userUpdate)

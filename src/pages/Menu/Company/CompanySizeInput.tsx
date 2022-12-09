@@ -1,11 +1,6 @@
-import {InputProps, SelectInput, useInput} from "react-admin";
+import {SelectInput, SelectInputProps} from "react-admin";
 
-const CompanySizeInput = (props: InputProps) => {
-  const {
-    field,
-    fieldState: { isTouched, error },
-    formState: { isSubmitted }
-  } = useInput(props);
+const CompanySizeInput = (props: SelectInputProps) => {
   const choices = [
     { id: 'individual', name: 'individual' },
     { id: 'small', name: 'small' },
@@ -16,7 +11,6 @@ const CompanySizeInput = (props: InputProps) => {
   return (
     <SelectInput
       label="Company Size"
-      {...field}
       {...props}
       choices={choices}
     />
