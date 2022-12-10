@@ -118,7 +118,7 @@ export const TaskEdit = (props: any) => (
         <ReferenceInput source="users" reference="users/role/employees">
           <AutocompleteInput optionText={customOptionText}
                              optionValue='executor_id'
-                             filterToQuery={filterToQuery}  sx={task_sx}/>
+                             filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['manager_base', 'ranker_base'] })}  sx={task_sx}/>
         </ReferenceInput>
         <TextInput source="name" sx={task_sx} />
         <RichTextInput  source="description" sx={task_sx} />
@@ -136,29 +136,33 @@ export const TaskCreate = (props: any) => {
   return (
     <Create {...props} redirect="list">
       <SimpleForm>
-        <ReferenceInput source="client_id" reference="users/role/client_base">
-          <AutocompleteInput optionText={customOptionText}
-                             filterToQuery={filterToQuery}
-                             sx={task_sx}/>
+        <ReferenceInput source="client_id" reference="users/role/client_base" >
+          <AutocompleteInput
+            optionText={customOptionText}
+            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `client_base` })}
+             sx={task_sx}
+          />
         </ReferenceInput>
-        <ReferenceInput source="author_id" reference="users/role/manager_base">
-          <AutocompleteInput optionText={customOptionText}
-                             filterToQuery={filterToQuery}
-                             sx={task_sx}/>
+        <ReferenceInput source="author_id" reference="users/role/manager_base" >
+          <AutocompleteInput
+            optionText={customOptionText}
+            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `manager_base` })}
+             sx={task_sx}
+          />
         </ReferenceInput>
-        <ReferenceInput source="executor_id" reference="users/role/employees">
-          <AutocompleteInput optionText={customOptionText}
-                             filterToQuery={filterToQuery}
-                             sx={task_sx}/>
+        <ReferenceInput source="executor_id" reference="users/role/employees" >
+          <AutocompleteInput
+            optionText={customOptionText}
+            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['manager_base', 'ranker_base'] })}
+            sx={task_sx}
+          />
         </ReferenceInput>
         <TextInput source="name" sx={task_sx} />
         <RichTextInput source="description" sx={task_sx} />
         <TextInput source="type" sx={task_sx} />
         <TaskPriorityInput {...props} source="priority" sx={task_sx} />
         <TaskStatusInput {...props} source="status"  sx={task_sx} />
-        <DateTimeInput source="create_date" parse={dateParser} sx={task_sx} />
         <DateTimeInput source="deadline_date" parse={dateParser} sx={task_sx} />
-        <DateTimeInput source="completion_date" parse={dateParser} sx={task_sx} />
       </SimpleForm>
     </Create>
   );

@@ -36,30 +36,46 @@ const UserReportCreate = (props: any) => {
 
   return (
     <Create {...props} >
-      <SimpleForm onSubmit={downloadFile} toolbar={
+      <TabbedForm onSubmit={downloadFile} toolbar={
         <Toolbar {...props} >
             <SaveButton label="Create report" icon={<BrowserUpdatedIcon/>}/>
         </Toolbar>}>
-        <TextField {...props} label="Email" value={email} variant="standard" disabled sx={{mb: 2}}/>
-        <TextField {...props} label="Role" value={role} variant="standard" disabled sx={{mb: 2}}/>
-        <ReferenceInput source="id" reference="users">
-          <AutocompleteInput
-            optionText={(record: { email: any; role: any; }) => {
-                setRole(`${record.role}`);
-                setEmail(`${record.email}`);
-                return `${record.email}, ${record.role}`
+        <FormTab label="User">
+          <TextField {...props} label="Email" value={email} variant="standard" disabled sx={{mb: 2}}/>
+          <TextField {...props} label="Role" value={role} variant="standard" disabled sx={{mb: 2}}/>
+          <ReferenceInput source="id" reference="users">
+            <AutocompleteInput
+              optionText={(record: { email: any; role: any; }) => {
+                  setRole(`${record.role}`);
+                  setEmail(`${record.email}`);
+                  return `${record.email}, ${record.role}`
+                }
               }
-            }
-            optionValue="id"
-            label={"Employee"}
-            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['manager_base', 'ranker_base'] })}
-            sx={{ width: 210 }}
-          />
-        </ReferenceInput>
-        <ReportExtInput {...props} source="ext"/>
-        <DateTimeInput source="start_timestamp" parse={dateParser} />
-        <DateTimeInput source="end_timestamp" parse={dateParser} />
-      </SimpleForm>
+              optionValue="id"
+              label={"Employee"}
+              filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['manager_base', 'ranker_base'] })}
+              sx={{ width: 210 }}
+            />
+          </ReferenceInput>
+          <ReportExtInput {...props} source="ext"/>
+          <DateTimeInput source="start_timestamp" parse={dateParser} />
+          <DateTimeInput source="end_timestamp" parse={dateParser} />
+        </FormTab>
+        <FormTab label="Task">
+          <ReferenceInput source="client_id" reference="users/role/client_base">
+            <AutocompleteInput optionText="email" filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `client_base` })} />
+          </ReferenceInput>
+          <ReferenceInput source="author_id" reference="users/role/manager_base">
+            <AutocompleteInput optionText="email" filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `manager_base` })} />
+          </ReferenceInput>
+          <ReferenceInput source="executor_id" reference="users/role/employees">
+            <AutocompleteInput optionText="email" filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['manager_base', 'ranker_base'] })} />
+          </ReferenceInput>
+          <ReportExtInput {...props} source="ext"/>
+          <DateTimeInput source="start_timestamp" parse={dateParser} />
+          <DateTimeInput source="end_timestamp" parse={dateParser} />
+        </FormTab>
+      </TabbedForm>
     </Create>
   )
 };

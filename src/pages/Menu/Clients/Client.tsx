@@ -7,7 +7,7 @@ import ClientTypeInput from "./ClientTypeInput";
 
 export const ClientShow = (props: any) => {
   return (
-    <Show>
+    <Show {...props}>
       <SimpleShowLayout>
         <ReferenceField source="id" reference="users/role/client_base">
           <TextField source="email"/>
@@ -36,11 +36,11 @@ export const ClientList = (props: any) => {
   ];
   return (
     <List filters={clientFilters}>
-      <Datagrid rowClick="show"  >
+      <Datagrid>
         <ReferenceField source="id" reference="users/role/client_base" link="show">
           <TextField source="email"/>
         </ReferenceField>
-        <ReferenceField source="company_id" reference="companies" link="show">
+        <ReferenceField source="company_id" reference="companies">
           <TextField source="name"/>
         </ReferenceField>
         <ChipField source="type"/>

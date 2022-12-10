@@ -14,6 +14,7 @@ const UserRoleInput = (props: SelectInputProps) => {
       label="User Role"
       {...props}
       choices={choices}
+      optionValue={"id"}
     />
   );
 };

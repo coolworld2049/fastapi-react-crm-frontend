@@ -22,6 +22,7 @@ import {
 import UserRoleInput from "./UserRoleInput";
 import ClientTypeInput from "../Clients/ClientTypeInput";
 import {user_sx} from "../../../components/commonStyles";
+import {userApi} from "../../../providers/env";
 
 
 export const filterToQueryCompany = (searchText: any) => ({ name: `${searchText}` });
@@ -41,11 +42,7 @@ export const UserList = (props: any) => {
   ];
   return (
     <List {...props} filters={userFilters}>
-      <Datagrid
-        {...props}
-        rowClick="show"
-        
-      >
+      <Datagrid {...props}>
         <TextField source="id"/>
         <TextField source="full_name"/>
         <TextField source="username"/>
@@ -57,7 +54,6 @@ export const UserList = (props: any) => {
           <TextField source="name" label='Company' />
         </ReferenceField>
         <ChipField source="type"/>
-        <DateField source="create_date" showTime={true}/>
         <EditButton/>
       </Datagrid>
     </List>
@@ -86,7 +82,7 @@ export const UserEdit = (props: any) => (
 
 export const UserCreate = (props: any) => {
   return (
-    <Create {...props} redirect="list">
+    <Create redirect="list">
       <SimpleForm>
         <TextInput source="email" sx={user_sx} />
         <PasswordInput source="password" sx={user_sx} />
@@ -96,14 +92,14 @@ export const UserCreate = (props: any) => {
         <TextInput source="phone" sx={user_sx} />
         <ReferenceInput source="company_id" reference="companies" sx={user_sx} >
           <AutocompleteInput
-            source="name"
+            optionText="name"
             optionValue="id"
-            label='Company' sx={user_sx}
+            label='Company'
+            sx={user_sx}
             filterToQuery={filterToQueryCompany}
           />
         </ReferenceInput>
         <ClientTypeInput {...props} source="type" sx={user_sx} />
-        <BooleanInput {...props} source="is_active" defaultValue={true} sx={user_sx} />
       </SimpleForm>
     </Create>
   );

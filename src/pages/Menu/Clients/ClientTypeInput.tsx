@@ -12,6 +12,7 @@ const ClientTypeInput = (props: SelectInputProps) => {
       label="Client Type"
       {...props}
       choices={choices}
+      defaultValue={""}
     />
   );
 };
