@@ -27,7 +27,7 @@ const Auth: React.FC<AuthProps> = ({
 }) => {
   return (
     <form noValidate onSubmit={submit}>
-      <div style={authStyles.main}>
+      <div style={authStyles.main} >
         <Card sx={authStyles.card}>
           <div style={authStyles.avatar}>
             <Avatar>
@@ -35,7 +35,7 @@ const Auth: React.FC<AuthProps> = ({
             </Avatar>
           </div>
           <CardHeader
-            title={`React CRM - ${actionName}`}
+            title={`CRM - ${actionName}`}
             sx={authStyles.header}
           />
           <div style={authStyles.form}>

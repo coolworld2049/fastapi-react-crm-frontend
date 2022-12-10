@@ -3,9 +3,6 @@ import { FormEvent, useState } from "react";
 import { useLogin, useNotify } from "react-admin";
 import Auth from "../components/Auth";
 
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,11 +27,6 @@ const Login = () => {
       setPassword={setPassword}
       actionName="Sign in"
       submit={submit}
-      extraActions={
-        <Button color="secondary" to={"/signup"} component={Link}>
-          Register
-        </Button>
-      }
     />
   );
 };

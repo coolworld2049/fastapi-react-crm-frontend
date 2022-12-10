@@ -1,4 +1,4 @@
-import { AuthApi, Configuration, UsersApi } from "../generated";
+import { LoginApi, Configuration, UsersApi, TasksApi } from "../generated";
 
 const readApiBaseFromEnv = (): string => {
   // Get API base URL from env
@@ -14,6 +14,10 @@ const readApiBaseFromEnv = (): string => {
   return "http://localhost:8000";
 };
 
+export const readTimeZone = () => {
+  return "Europe/Moscow";
+};
+
 const readAccessToken = async (): Promise<string> => {
   return localStorage.getItem("token") || "";
 };
@@ -25,5 +29,6 @@ const apiConfig: Configuration = new Configuration({
   accessToken: readAccessToken,
 });
 
-export const authApi: AuthApi = new AuthApi(apiConfig);
+export const authApi: LoginApi = new LoginApi(apiConfig);
 export const userApi: UsersApi = new UsersApi(apiConfig);
+export const taskApi: TasksApi = new TasksApi(apiConfig);

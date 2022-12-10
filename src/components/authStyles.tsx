@@ -6,8 +6,8 @@ const authStyles = {
     minHeight: "100vh",
     alignItems: "center",
     justifyContent: "flex-start",
-    backgroundColor: "#fcf7e1",
   },
+
   card: {
     minWidth: 300,
     marginTop: "6em",
