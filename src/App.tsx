@@ -2,31 +2,35 @@ import {Admin, CustomRoutes, Resource, ShowGuesser} from "react-admin";
 import {Route} from "react-router";
 import MyLayout from "./components/AdminLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import {TaskCreate, TaskEdit, TaskList, TaskShow} from "./pages/Menu/Tasks/Task";
+import {TaskCreate, TaskEdit, TaskList} from "./pages/Menu/Task";
 import LoginPage from "./pages/Login";
 import {ProfileEdit} from "./pages/Profile/ProfileEdit";
-import {UserCreate, UserEdit, UserList} from "./pages/Menu/Users/Users";
+import {UserCreate, UserEdit, UserList} from "./pages/Menu/Users";
 import authProvider from "./providers/authProvider";
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PersonIcon from "@mui/icons-material/Person";
 import {dataProvider} from "./providers/dataProvider";
-import {CompanyCreate, CompanyEdit, CompanyList, CompanyShow} from "./pages/Menu/Company/Company";
-import BusinessIcon from '@mui/icons-material/Business';
-import UserReportCreate from "./pages/Menu/Users/UserReportCreate";
-import {ClientList, ClientShow} from "./pages/Menu/Clients/Client";
 import Moment from 'react-moment';
+import {StudentEdit, StudentList} from "./pages/Menu/Student";
+import {TeacherEdit, TeacherList} from "./pages/Menu/Teacher";
+import {Study_groupCreate, Study_groupEdit, Study_groupList} from "./pages/Menu/StudyGroup";
+import {CampusCreate, CampusEdit, CampusList} from "./pages/Menu/Campus";
+import {TypedDisciplineEdit, TypedDisciplineList} from "./pages/Menu/TypedDiscipline";
+import {TaskStudentEdit, TaskStudentList} from "./pages/Menu/TaskStudent";
+import {TaskStoreEdit, TaskStoreList} from "./pages/Menu/TaskStore";
+import {DisciplineCreate, DisciplineEdit, DisciplineList} from "./pages/Menu/Discipline";
 
 // Sets the moment instance to use.
 Moment.globalMoment = require('moment');
 
 // Set the locale for every react-moment instance to French.
-Moment.globalLocale = 'fr';
+Moment.globalLocale = 'en';
 
 // Set the output format for every react-moment instance.
 Moment.globalFormat = 'D MMM YYYY';
 
 // Set the timezone for every instance.
-Moment.globalTimezone = 'America/Los_Angeles';
+Moment.globalTimezone = 'Europe/Moscow';
 
 // Set the output timezone for local for every instance.
 Moment.globalLocal = true;
@@ -62,35 +66,80 @@ const App = () => {
         icon={PersonIcon}
       />
       <Resource
-        options={{ label: "Clients" }}
-        name="users/role/client_base"
-        list={ClientList}
-        show={ClientShow}
+        options={{ label: "Students" }}
+        name="students"
+        list={StudentList}
+        edit={StudentEdit}
+        show={ShowGuesser}
         icon={PersonIcon}
       />
       <Resource
-        name="tasks"
+        options={{ label: "Teachers" }}
+        name="teachers"
+        list={TeacherList}
+        edit={TeacherEdit}
+        show={ShowGuesser}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Study Groups" }}
+        name="study_groups"
+        list={Study_groupList}
+        edit={Study_groupEdit}
+        create={Study_groupCreate}
+        show={ShowGuesser}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Campus" }}
+        name="campuses"
+        list={CampusList}
+        edit={CampusEdit}
+        create={CampusCreate}
+        show={ShowGuesser}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Disciplines" }}
+        name="disciplines"
+        list={DisciplineList}
+        edit={DisciplineEdit}
+        create={DisciplineCreate}
+        show={ShowGuesser}
+        icon={PersonIcon}
+      />
+      <Resource
+        options={{ label: "Detailed Disciplines" }}
+        name="typed_disciplines"
+        list={TypedDisciplineList}
+        edit={TypedDisciplineEdit}
+        show={ShowGuesser}
+        icon={PersonIcon}
+      />
+      <Resource
         options={{ label: "Tasks" }}
+        name="tasks"
         list={TaskList}
         edit={TaskEdit}
         create={TaskCreate}
-        show={TaskShow}
+        show={ShowGuesser}
         icon={AssignmentIcon}
       />
       <Resource
-        name="companies"
-        options={{ label: "Companies" }}
-        list={CompanyList}
-        edit={CompanyEdit}
-        create={CompanyCreate}
-        show={CompanyShow}
-        icon={BusinessIcon}
+        options={{ label: "Student Tasks" }}
+        name="task_students"
+        list={TaskStudentList}
+        edit={TaskStudentEdit}
+        show={ShowGuesser}
+        icon={AssignmentIcon}
       />
       <Resource
-        options={{ label: "Reports" }}
-        name="users/report"
-        list={UserReportCreate}
-        create={UserReportCreate}
+        options={{ label: "Task Store" }}
+        name="task_stores"
+        list={TaskStoreList}
+        edit={TaskStoreEdit}
+        show={ShowGuesser}
+        icon={PersonIcon}
       />
     </Admin>
   );

@@ -43,155 +43,215 @@ export interface BodyUpdateUserMeApiV1UsersMePut {
 /**
  * 
  * @export
- * @interface Company
+ * @interface Campus
  */
-export interface Company {
+export interface Campus {
     /**
      * 
      * @type {string}
-     * @memberof Company
+     * @memberof Campus
      */
-    'name'?: string;
+    'address': string;
     /**
      * 
      * @type {string}
-     * @memberof Company
+     * @memberof Campus
      */
-    'sector'?: string;
-    /**
-     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
-     * @type {string}
-     * @memberof Company
-     */
-    'size'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Company
-     */
-    'address'?: string;
+    'id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CampusCreate
+ */
+export interface CampusCreate {
     /**
      * 
      * @type {string}
-     * @memberof Company
+     * @memberof CampusCreate
      */
-    'city'?: string;
+    'address': string;
     /**
      * 
      * @type {string}
-     * @memberof Company
+     * @memberof CampusCreate
      */
-    'website'?: string;
+    'id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CampusUpdate
+ */
+export interface CampusUpdate {
     /**
      * 
      * @type {string}
-     * @memberof Company
+     * @memberof CampusUpdate
      */
-    'create_date'?: string;
+    'address': string;
+}
+/**
+ * 
+ * @export
+ * @interface Discipline
+ */
+export interface Discipline {
+    /**
+     * 
+     * @type {string}
+     * @memberof TypedDiscipline
+     */
+    'title': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TypedDiscipline
+     */
+    'assessment'?: string;
     /**
      * 
      * @type {number}
-     * @memberof Company
+     * @memberof TypedDiscipline
      */
     'id'?: number;
 }
 /**
  * 
  * @export
- * @interface CompanyCreate
+ * @interface DisciplineCreate
  */
-export interface CompanyCreate {
+export interface DisciplineCreate {
     /**
      * 
      * @type {string}
-     * @memberof CompanyCreate
+     * @memberof DisciplineCreate
      */
-    'name'?: string;
+    'title': string;
     /**
      * 
      * @type {string}
-     * @memberof CompanyCreate
+     * @memberof DisciplineCreate
      */
-    'sector'?: string;
-    /**
-     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
-     * @type {string}
-     * @memberof CompanyCreate
-     */
-    'size'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CompanyCreate
-     */
-    'address'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CompanyCreate
-     */
-    'city'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CompanyCreate
-     */
-    'website'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CompanyCreate
-     */
-    'create_date'?: string;
+    'assessment'?: string;
 }
 /**
  * 
  * @export
- * @interface CompanyUpdate
+ * @interface DisciplineTyped
  */
-export interface CompanyUpdate {
+export interface DisciplineTyped {
+    /**
+     * 
+     * @type {number}
+     * @memberof DisciplineTyped
+     */
+    'discipline_id': number;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTyped
      */
-    'name'?: string;
+    'classroom_number'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTyped
      */
-    'sector'?: string;
-    /**
-     * required: [\'individual\', \'small\', \'medium\', \'big\', \'huge\']
-     * @type {string}
-     * @memberof CompanyUpdate
-     */
-    'size'?: string;
+    'campus_id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTyped
      */
-    'address'?: string;
+    'type'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof DisciplineTyped
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface DisciplineTypedCreate
+ */
+export interface DisciplineTypedCreate {
+    /**
+     * 
+     * @type {number}
+     * @memberof DisciplineTypedCreate
+     */
+    'discipline_id': number;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTypedCreate
      */
-    'city'?: string;
+    'classroom_number'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTypedCreate
      */
-    'website'?: string;
+    'campus_id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CompanyUpdate
+     * @memberof DisciplineTypedCreate
      */
-    'create_date'?: string;
+    'type'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface DisciplineTypedUpdate
+ */
+export interface DisciplineTypedUpdate {
+    /**
+     * 
+     * @type {number}
+     * @memberof DisciplineTypedUpdate
+     */
+    'discipline_id': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof DisciplineTypedUpdate
+     */
+    'classroom_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DisciplineTypedUpdate
+     */
+    'campus_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DisciplineTypedUpdate
+     */
+    'type'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface DisciplineUpdate
+ */
+export interface DisciplineUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof DisciplineUpdate
+     */
+    'title': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DisciplineUpdate
+     */
+    'assessment'?: string;
 }
 /**
  * 
@@ -206,59 +266,6 @@ export interface HTTPValidationError {
      */
     'detail'?: Array<ValidationError>;
 }
-/**
- * 
- * @export
- * @interface ReportTaskCreate
- */
-export interface ReportTaskCreate {
-    /**
-     * 
-     * @type {string}
-     * @memberof ReportTaskCreate
-     */
-    'start_timestamp': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ReportTaskCreate
-     */
-    'end_timestamp': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ReportTaskCreate
-     */
-    'ext'?: ReportTaskCreateExtEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof ReportTaskCreate
-     */
-    'client_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ReportTaskCreate
-     */
-    'author_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ReportTaskCreate
-     */
-    'executor_id'?: number;
-}
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ReportTaskCreateExtEnum {
-    Csv = 'csv',
-    Json = 'json'
-}
-
 /**
  * 
  * @export
@@ -303,6 +310,159 @@ export enum ReportUserCreateExtEnum {
 /**
  * 
  * @export
+ * @interface Student
+ */
+export interface Student {
+    /**
+     * 
+     * @type {string}
+     * @memberof Student
+     */
+    'study_group_cipher_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Student
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface StudentCreate
+ */
+export interface StudentCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudentCreate
+     */
+    'study_group_cipher_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof StudentCreate
+     */
+    'id': number;
+}
+/**
+ * 
+ * @export
+ * @interface StudentUpdate
+ */
+export interface StudentUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudentUpdate
+     */
+    'study_group_cipher_id': string;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroup
+ */
+export interface StudyGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroup
+     */
+    'study_group_cipher_id': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof StudyGroup
+     */
+    'discipline_id': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StudyGroup
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroupCipher
+ */
+export interface StudyGroupCipher {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroupCipher
+     */
+    'id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroupCipherCreate
+ */
+export interface StudyGroupCipherCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroupCipherCreate
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroupCipherUpdate
+ */
+export interface StudyGroupCipherUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroupCipherUpdate
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroupCreate
+ */
+export interface StudyGroupCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroupCreate
+     */
+    'study_group_cipher_id': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof StudyGroupCreate
+     */
+    'discipline_id': number;
+}
+/**
+ * 
+ * @export
+ * @interface StudyGroupUpdate
+ */
+export interface StudyGroupUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof StudyGroupUpdate
+     */
+    'study_group_cipher_id': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof StudyGroupUpdate
+     */
+    'discipline_id': number;
+}
+/**
+ * 
+ * @export
  * @interface Task
  */
 export interface Task {
@@ -311,25 +471,25 @@ export interface Task {
      * @type {number}
      * @memberof Task
      */
-    'client_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof Task
-     */
-    'author_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof Task
-     */
-    'executor_id'?: number;
+    'teacher_id'?: number;
     /**
      * 
      * @type {string}
      * @memberof Task
      */
-    'name'?: string;
+    'study_group_cipher_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Task
+     */
+    'student_id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Task
+     */
+    'title'?: string;
     /**
      * 
      * @type {string}
@@ -337,35 +497,23 @@ export interface Task {
      */
     'description'?: string;
     /**
-     * 
+     * [\'unassigned\', \'pending\', \'started\', \'verifying\', \'accepted\', \'overdue\', \'completed\']
      * @type {string}
      * @memberof Task
      */
     'status'?: string;
     /**
-     * required: [\'high\', \'medium\', \'low\']
+     * [\'high\', \'medium\', \'low\']
      * @type {string}
      * @memberof Task
      */
-    'priority': string;
+    'priority'?: string;
     /**
      * 
      * @type {string}
      * @memberof Task
      */
-    'create_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Task
-     */
-    'deadline_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Task
-     */
-    'completion_date'?: string;
+    'expiration_date'?: string;
     /**
      * 
      * @type {number}
@@ -374,10 +522,10 @@ export interface Task {
     'id'?: number;
     /**
      * 
-     * @type {Array<any>}
+     * @type {string}
      * @memberof Task
      */
-    'task_priority'?: Array<any>;
+    'create_date'?: string;
 }
 /**
  * 
@@ -390,25 +538,25 @@ export interface TaskCreate {
      * @type {number}
      * @memberof TaskCreate
      */
-    'client_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof TaskCreate
-     */
-    'author_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof TaskCreate
-     */
-    'executor_id'?: number;
+    'teacher_id'?: number;
     /**
      * 
      * @type {string}
      * @memberof TaskCreate
      */
-    'name'?: string;
+    'study_group_cipher_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskCreate
+     */
+    'student_id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskCreate
+     */
+    'title'?: string;
     /**
      * 
      * @type {string}
@@ -416,35 +564,305 @@ export interface TaskCreate {
      */
     'description'?: string;
     /**
-     * 
+     * [\'unassigned\', \'pending\', \'started\', \'verifying\', \'accepted\', \'overdue\', \'completed\']
      * @type {string}
      * @memberof TaskCreate
      */
     'status'?: string;
     /**
-     * required: [\'high\', \'medium\', \'low\']
+     * [\'high\', \'medium\', \'low\']
      * @type {string}
      * @memberof TaskCreate
      */
-    'priority': string;
+    'priority'?: string;
     /**
      * 
      * @type {string}
      * @memberof TaskCreate
      */
-    'create_date'?: string;
+    'expiration_date'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStore
+ */
+export interface TaskStore {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStore
+     */
+    'task_id': number;
     /**
      * 
      * @type {string}
-     * @memberof TaskCreate
+     * @memberof TaskStore
+     */
+    'url': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStore
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStore
+     */
+    'filename'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStore
+     */
+    'media_type'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStore
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStoreCreate
+ */
+export interface TaskStoreCreate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStoreCreate
+     */
+    'task_id': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreCreate
+     */
+    'url': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStoreCreate
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreCreate
+     */
+    'filename'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreCreate
+     */
+    'media_type'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStoreUpdate
+ */
+export interface TaskStoreUpdate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStoreUpdate
+     */
+    'task_id': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreUpdate
+     */
+    'url': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStoreUpdate
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreUpdate
+     */
+    'filename'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStoreUpdate
+     */
+    'media_type'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStudent
+ */
+export interface TaskStudent {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudent
+     */
+    'points'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudent
+     */
+    'comment'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudent
+     */
+    'feedback'?: string;
+    /**
+     * great
+     * @type {string}
+     * @memberof TaskStudent
+     */
+    'grade'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudent
      */
     'deadline_date'?: string;
     /**
      * 
      * @type {string}
-     * @memberof TaskCreate
+     * @memberof TaskStudent
+     */
+    'start_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudent
      */
     'completion_date'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudent
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStudentCreate
+ */
+export interface TaskStudentCreate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudentCreate
+     */
+    'points'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'comment'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'feedback'?: string;
+    /**
+     * great
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'grade'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'deadline_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'start_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentCreate
+     */
+    'completion_date'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudentCreate
+     */
+    'id': number;
+}
+/**
+ * 
+ * @export
+ * @interface TaskStudentUpdate
+ */
+export interface TaskStudentUpdate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudentUpdate
+     */
+    'points'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'comment'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'feedback'?: string;
+    /**
+     * great
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'grade'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'deadline_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'start_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskStudentUpdate
+     */
+    'completion_date'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskStudentUpdate
+     */
+    'id': number;
 }
 /**
  * 
@@ -457,25 +875,25 @@ export interface TaskUpdate {
      * @type {number}
      * @memberof TaskUpdate
      */
-    'client_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof TaskUpdate
-     */
-    'author_id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof TaskUpdate
-     */
-    'executor_id': number;
+    'teacher_id'?: number;
     /**
      * 
      * @type {string}
      * @memberof TaskUpdate
      */
-    'name'?: string;
+    'study_group_cipher_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskUpdate
+     */
+    'student_id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskUpdate
+     */
+    'title'?: string;
     /**
      * 
      * @type {string}
@@ -483,72 +901,123 @@ export interface TaskUpdate {
      */
     'description'?: string;
     /**
-     * 
+     * [\'unassigned\', \'pending\', \'started\', \'verifying\', \'accepted\', \'overdue\', \'completed\']
      * @type {string}
      * @memberof TaskUpdate
      */
     'status'?: string;
     /**
-     * required: [\'high\', \'medium\', \'low\']
+     * [\'high\', \'medium\', \'low\']
      * @type {string}
      * @memberof TaskUpdate
      */
-    'priority': string;
+    'priority'?: string;
     /**
      * 
      * @type {string}
      * @memberof TaskUpdate
      */
-    'create_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TaskUpdate
-     */
-    'deadline_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TaskUpdate
-     */
-    'completion_date'?: string;
+    'expiration_date'?: string;
 }
 /**
  * 
  * @export
- * @interface TokenPayload
+ * @interface Teacher
  */
-export interface TokenPayload {
+export interface Teacher {
+    /**
+     * 
+     * @type {number}
+     * @memberof Teacher
+     */
+    'discipline_id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Teacher
+     */
+    'user_id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Teacher
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface TeacherCreate
+ */
+export interface TeacherCreate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TeacherCreate
+     */
+    'discipline_id': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TeacherCreate
+     */
+    'user_id': number;
+}
+/**
+ * 
+ * @export
+ * @interface TeacherUpdate
+ */
+export interface TeacherUpdate {
+    /**
+     * 
+     * @type {number}
+     * @memberof TeacherUpdate
+     */
+    'discipline_id': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TeacherUpdate
+     */
+    'user_id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface Token
+ */
+export interface Token {
     /**
      * 
      * @type {string}
-     * @memberof TokenPayload
+     * @memberof Token
      */
     'access_token'?: string;
     /**
      * 
      * @type {string}
-     * @memberof TokenPayload
+     * @memberof Token
      */
     'expires_delta'?: string;
     /**
      * 
      * @type {string}
-     * @memberof TokenPayload
+     * @memberof Token
      */
     'token_type'?: string;
     /**
      * 
      * @type {string}
-     * @memberof TokenPayload
+     * @memberof Token
      */
     'sub'?: string;
     /**
      * 
      * @type {Array<string>}
-     * @memberof TokenPayload
+     * @memberof Token
      */
-    'scopes': Array<string>;
+    'scopes'?: Array<string>;
 }
 /**
  * 
@@ -563,17 +1032,41 @@ export interface User {
      */
     'email'?: string;
     /**
+     * [\'admin\', \'anon\', \'student\', \'student_leader\', \'student_leader_assistant\', \'teacher\']
+     * @type {string}
+     * @memberof User
+     */
+    'role'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    'full_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    'username'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof User
+     */
+    'age'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    'avatar'?: string;
+    /**
      * 
      * @type {string}
      * @memberof User
      */
     'phone'?: string;
-    /**
-     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
-     * @type {string}
-     * @memberof User
-     */
-    'role'?: string;
     /**
      * 
      * @type {boolean}
@@ -586,36 +1079,6 @@ export interface User {
      * @memberof User
      */
     'is_superuser'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'full_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'username': string;
-    /**
-     * 
-     * @type {number}
-     * @memberof User
-     */
-    'company_id'?: number;
-    /**
-     * required: [\'current\', \'potential\']
-     * @type {string}
-     * @memberof User
-     */
-    'type'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'create_date'?: string;
     /**
      * 
      * @type {number}
@@ -636,29 +1099,11 @@ export interface UserCreate {
      */
     'email': string;
     /**
-     * 
-     * @type {string}
-     * @memberof UserCreate
-     */
-    'phone'?: string;
-    /**
-     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
+     * [\'admin\', \'anon\', \'student\', \'student_leader\', \'student_leader_assistant\', \'teacher\']
      * @type {string}
      * @memberof UserCreate
      */
     'role'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof UserCreate
-     */
-    'is_active'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof UserCreate
-     */
-    'is_superuser'?: boolean;
     /**
      * 
      * @type {string}
@@ -676,19 +1121,31 @@ export interface UserCreate {
      * @type {number}
      * @memberof UserCreate
      */
-    'company_id'?: number;
-    /**
-     * required: [\'current\', \'potential\']
-     * @type {string}
-     * @memberof UserCreate
-     */
-    'type'?: string;
+    'age'?: number;
     /**
      * 
      * @type {string}
      * @memberof UserCreate
      */
-    'create_date'?: string;
+    'avatar'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserCreate
+     */
+    'phone'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UserCreate
+     */
+    'is_active'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UserCreate
+     */
+    'is_superuser'?: boolean;
     /**
      * 
      * @type {string}
@@ -709,17 +1166,41 @@ export interface UserUpdate {
      */
     'email'?: string;
     /**
+     * [\'admin\', \'anon\', \'student\', \'student_leader\', \'student_leader_assistant\', \'teacher\']
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'role'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'full_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'username'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UserUpdate
+     */
+    'age'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'avatar'?: string;
+    /**
      * 
      * @type {string}
      * @memberof UserUpdate
      */
     'phone'?: string;
-    /**
-     * required: [\'user\', \'admin_base\', \'manager_base\', \'ranker_base\', \'client_base\']
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'role'?: string;
     /**
      * 
      * @type {boolean}
@@ -732,42 +1213,6 @@ export interface UserUpdate {
      * @memberof UserUpdate
      */
     'is_superuser'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'full_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'username': string;
-    /**
-     * 
-     * @type {number}
-     * @memberof UserUpdate
-     */
-    'company_id'?: number;
-    /**
-     * required: [\'current\', \'potential\']
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'type'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'create_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    'password'?: string;
 }
 /**
  * 
@@ -796,22 +1241,22 @@ export interface ValidationError {
 }
 
 /**
- * CompaniesApi - axios parameter creator
+ * CampusesApi - axios parameter creator
  * @export
  */
-export const CompaniesApiAxiosParamCreator = function (configuration?: Configuration) {
+export const CampusesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Create new company.
-         * @summary Create Company
-         * @param {CompanyCreate} companyCreate 
+         * Create new Campus.
+         * @summary Create Campus
+         * @param {CampusCreate} campusCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createCompany: async (companyCreate: CompanyCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'companyCreate' is not null or undefined
-            assertParamExists('createCompany', 'companyCreate', companyCreate)
-            const localVarPath = `/api/v1/companies/`;
+        createCampus: async (campusCreate: CampusCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'campusCreate' is not null or undefined
+            assertParamExists('createCampus', 'campusCreate', campusCreate)
+            const localVarPath = `/api/v1/campuses/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -834,7 +1279,7 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(companyCreate, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(campusCreate, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -842,16 +1287,16 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Delete a company.
-         * @summary Delete Company
+         * Delete an Campus.
+         * @summary Delete Campus Id
          * @param {number} id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCompany: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteCampusId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('deleteCompany', 'id', id)
-            const localVarPath = `/api/v1/companies/{id}`
+            assertParamExists('deleteCampusId', 'id', id)
+            const localVarPath = `/api/v1/campuses/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -880,16 +1325,54 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Retrieve Tasks.
-         * @summary Read Companies
-         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
-         * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * Get Campus by ID.
+         * @summary Read Campus Id
+         * @param {string} id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readCompanies: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/v1/companies/`;
+        readCampusId: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readCampusId', 'id', id)
+            const localVarPath = `/api/v1/campuses/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve Campuss.
+         * @summary Read Campuss
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCampuss: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/campuses/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -929,57 +1412,19 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Get company by ID.
-         * @summary Read Company
+         * Update an Campus.
+         * @summary Update Campus Id
          * @param {number} id 
+         * @param {CampusUpdate} campusUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readCompany: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateCampusId: async (id: number, campusUpdate: CampusUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('readCompany', 'id', id)
-            const localVarPath = `/api/v1/companies/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication OAuth2PasswordBearer required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Update a company.
-         * @summary Update Company
-         * @param {number} id 
-         * @param {CompanyUpdate} companyUpdate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        updateCompany: async (id: number, companyUpdate: CompanyUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('updateCompany', 'id', id)
-            // verify required parameter 'companyUpdate' is not null or undefined
-            assertParamExists('updateCompany', 'companyUpdate', companyUpdate)
-            const localVarPath = `/api/v1/companies/{id}`
+            assertParamExists('updateCampusId', 'id', id)
+            // verify required parameter 'campusUpdate' is not null or undefined
+            assertParamExists('updateCampusId', 'campusUpdate', campusUpdate)
+            const localVarPath = `/api/v1/campuses/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1003,7 +1448,7 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(companyUpdate, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(campusUpdate, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -1014,204 +1459,204 @@ export const CompaniesApiAxiosParamCreator = function (configuration?: Configura
 };
 
 /**
- * CompaniesApi - functional programming interface
+ * CampusesApi - functional programming interface
  * @export
  */
-export const CompaniesApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = CompaniesApiAxiosParamCreator(configuration)
+export const CampusesApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CampusesApiAxiosParamCreator(configuration)
     return {
         /**
-         * Create new company.
-         * @summary Create Company
-         * @param {CompanyCreate} companyCreate 
+         * Create new Campus.
+         * @summary Create Campus
+         * @param {CampusCreate} campusCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createCompany(companyCreate: CompanyCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createCompany(companyCreate, options);
+        async createCampus(campusCreate: CampusCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Campus>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createCampus(campusCreate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Delete a company.
-         * @summary Delete Company
+         * Delete an Campus.
+         * @summary Delete Campus Id
          * @param {number} id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteCompany(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCompany(id, options);
+        async deleteCampusId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Campus>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCampusId(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Retrieve Tasks.
-         * @summary Read Companies
+         * Get Campus by ID.
+         * @summary Read Campus Id
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readCampusId(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Campus>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readCampusId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Campuss.
+         * @summary Read Campuss
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readCompanies(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Company>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readCompanies(sort, range, filter, options);
+        async readCampuss(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Campus>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readCampuss(sort, range, filter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Get company by ID.
-         * @summary Read Company
+         * Update an Campus.
+         * @summary Update Campus Id
          * @param {number} id 
+         * @param {CampusUpdate} campusUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readCompany(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readCompany(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Update a company.
-         * @summary Update Company
-         * @param {number} id 
-         * @param {CompanyUpdate} companyUpdate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async updateCompany(id: number, companyUpdate: CompanyUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Company>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateCompany(id, companyUpdate, options);
+        async updateCampusId(id: number, campusUpdate: CampusUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Campus>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateCampusId(id, campusUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * CompaniesApi - factory interface
+ * CampusesApi - factory interface
  * @export
  */
-export const CompaniesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = CompaniesApiFp(configuration)
+export const CampusesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CampusesApiFp(configuration)
     return {
         /**
-         * Create new company.
-         * @summary Create Company
-         * @param {CompanyCreate} companyCreate 
+         * Create new Campus.
+         * @summary Create Campus
+         * @param {CampusCreate} campusCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createCompany(companyCreate: CompanyCreate, options?: any): AxiosPromise<Company> {
-            return localVarFp.createCompany(companyCreate, options).then((request) => request(axios, basePath));
+        createCampus(campusCreate: CampusCreate, options?: any): AxiosPromise<Campus> {
+            return localVarFp.createCampus(campusCreate, options).then((request) => request(axios, basePath));
         },
         /**
-         * Delete a company.
-         * @summary Delete Company
+         * Delete an Campus.
+         * @summary Delete Campus Id
          * @param {number} id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCompany(id: number, options?: any): AxiosPromise<Company> {
-            return localVarFp.deleteCompany(id, options).then((request) => request(axios, basePath));
+        deleteCampusId(id: number, options?: any): AxiosPromise<Campus> {
+            return localVarFp.deleteCampusId(id, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve Tasks.
-         * @summary Read Companies
+         * Get Campus by ID.
+         * @summary Read Campus Id
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readCampusId(id: string, options?: any): AxiosPromise<Campus> {
+            return localVarFp.readCampusId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Campuss.
+         * @summary Read Campuss
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readCompanies(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<Company>> {
-            return localVarFp.readCompanies(sort, range, filter, options).then((request) => request(axios, basePath));
+        readCampuss(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<Campus>> {
+            return localVarFp.readCampuss(sort, range, filter, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get company by ID.
-         * @summary Read Company
+         * Update an Campus.
+         * @summary Update Campus Id
          * @param {number} id 
+         * @param {CampusUpdate} campusUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readCompany(id: number, options?: any): AxiosPromise<Company> {
-            return localVarFp.readCompany(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Update a company.
-         * @summary Update Company
-         * @param {number} id 
-         * @param {CompanyUpdate} companyUpdate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        updateCompany(id: number, companyUpdate: CompanyUpdate, options?: any): AxiosPromise<Company> {
-            return localVarFp.updateCompany(id, companyUpdate, options).then((request) => request(axios, basePath));
+        updateCampusId(id: number, campusUpdate: CampusUpdate, options?: any): AxiosPromise<Campus> {
+            return localVarFp.updateCampusId(id, campusUpdate, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * CompaniesApi - object-oriented interface
+ * CampusesApi - object-oriented interface
  * @export
- * @class CompaniesApi
+ * @class CampusesApi
  * @extends {BaseAPI}
  */
-export class CompaniesApi extends BaseAPI {
+export class CampusesApi extends BaseAPI {
     /**
-     * Create new company.
-     * @summary Create Company
-     * @param {CompanyCreate} companyCreate 
+     * Create new Campus.
+     * @summary Create Campus
+     * @param {CampusCreate} campusCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CompaniesApi
+     * @memberof CampusesApi
      */
-    public createCompany(companyCreate: CompanyCreate, options?: AxiosRequestConfig) {
-        return CompaniesApiFp(this.configuration).createCompany(companyCreate, options).then((request) => request(this.axios, this.basePath));
+    public createCampus(campusCreate: CampusCreate, options?: AxiosRequestConfig) {
+        return CampusesApiFp(this.configuration).createCampus(campusCreate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Delete a company.
-     * @summary Delete Company
+     * Delete an Campus.
+     * @summary Delete Campus Id
      * @param {number} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CompaniesApi
+     * @memberof CampusesApi
      */
-    public deleteCompany(id: number, options?: AxiosRequestConfig) {
-        return CompaniesApiFp(this.configuration).deleteCompany(id, options).then((request) => request(this.axios, this.basePath));
+    public deleteCampusId(id: number, options?: AxiosRequestConfig) {
+        return CampusesApiFp(this.configuration).deleteCampusId(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Retrieve Tasks.
-     * @summary Read Companies
+     * Get Campus by ID.
+     * @summary Read Campus Id
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CampusesApi
+     */
+    public readCampusId(id: string, options?: AxiosRequestConfig) {
+        return CampusesApiFp(this.configuration).readCampusId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Campuss.
+     * @summary Read Campuss
      * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
      * @param {string} [range] Format: &#x60;[start, end]&#x60;
-     * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CompaniesApi
+     * @memberof CampusesApi
      */
-    public readCompanies(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
-        return CompaniesApiFp(this.configuration).readCompanies(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    public readCampuss(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return CampusesApiFp(this.configuration).readCampuss(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Get company by ID.
-     * @summary Read Company
+     * Update an Campus.
+     * @summary Update Campus Id
      * @param {number} id 
+     * @param {CampusUpdate} campusUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CompaniesApi
+     * @memberof CampusesApi
      */
-    public readCompany(id: number, options?: AxiosRequestConfig) {
-        return CompaniesApiFp(this.configuration).readCompany(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Update a company.
-     * @summary Update Company
-     * @param {number} id 
-     * @param {CompanyUpdate} companyUpdate 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CompaniesApi
-     */
-    public updateCompany(id: number, companyUpdate: CompanyUpdate, options?: AxiosRequestConfig) {
-        return CompaniesApiFp(this.configuration).updateCompany(id, companyUpdate, options).then((request) => request(this.axios, this.basePath));
+    public updateCampusId(id: number, campusUpdate: CampusUpdate, options?: AxiosRequestConfig) {
+        return CampusesApiFp(this.configuration).updateCampusId(id, campusUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -1315,6 +1760,427 @@ export class DefaultApi extends BaseAPI {
 
 
 /**
+ * DisciplinesApi - axios parameter creator
+ * @export
+ */
+export const DisciplinesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new TypedDiscipline.
+         * @summary Create TypedDiscipline
+         * @param {DisciplineCreate} disciplineCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDiscipline: async (disciplineCreate: DisciplineCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'disciplineCreate' is not null or undefined
+            assertParamExists('createDiscipline', 'disciplineCreate', disciplineCreate)
+            const localVarPath = `/api/v1/disciplines/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(disciplineCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an TypedDiscipline.
+         * @summary Delete TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDisciplineId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteDisciplineId', 'id', id)
+            const localVarPath = `/api/v1/disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get TypedDiscipline by ID.
+         * @summary Read TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readDisciplineId', 'id', id)
+            const localVarPath = `/api/v1/disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Disciplines
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplines: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/disciplines/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an TypedDiscipline.
+         * @summary Update TypedDiscipline Id
+         * @param {number} id 
+         * @param {DisciplineUpdate} disciplineUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDisciplineId: async (id: number, disciplineUpdate: DisciplineUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateDisciplineId', 'id', id)
+            // verify required parameter 'disciplineUpdate' is not null or undefined
+            assertParamExists('updateDisciplineId', 'disciplineUpdate', disciplineUpdate)
+            const localVarPath = `/api/v1/disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(disciplineUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DisciplinesApi - functional programming interface
+ * @export
+ */
+export const DisciplinesApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DisciplinesApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new TypedDiscipline.
+         * @summary Create TypedDiscipline
+         * @param {DisciplineCreate} disciplineCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createDiscipline(disciplineCreate: DisciplineCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Discipline>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createDiscipline(disciplineCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an TypedDiscipline.
+         * @summary Delete TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteDisciplineId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Discipline>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDisciplineId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get TypedDiscipline by ID.
+         * @summary Read TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readDisciplineId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Discipline>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readDisciplineId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Disciplines
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readDisciplines(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Discipline>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readDisciplines(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an TypedDiscipline.
+         * @summary Update TypedDiscipline Id
+         * @param {number} id 
+         * @param {DisciplineUpdate} disciplineUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateDisciplineId(id: number, disciplineUpdate: DisciplineUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Discipline>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDisciplineId(id, disciplineUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * DisciplinesApi - factory interface
+ * @export
+ */
+export const DisciplinesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DisciplinesApiFp(configuration)
+    return {
+        /**
+         * Create new TypedDiscipline.
+         * @summary Create TypedDiscipline
+         * @param {DisciplineCreate} disciplineCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDiscipline(disciplineCreate: DisciplineCreate, options?: any): AxiosPromise<Discipline> {
+            return localVarFp.createDiscipline(disciplineCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an TypedDiscipline.
+         * @summary Delete TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDisciplineId(id: number, options?: any): AxiosPromise<Discipline> {
+            return localVarFp.deleteDisciplineId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get TypedDiscipline by ID.
+         * @summary Read TypedDiscipline Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineId(id: number, options?: any): AxiosPromise<Discipline> {
+            return localVarFp.readDisciplineId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Disciplines
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplines(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<Discipline>> {
+            return localVarFp.readDisciplines(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an TypedDiscipline.
+         * @summary Update TypedDiscipline Id
+         * @param {number} id 
+         * @param {DisciplineUpdate} disciplineUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDisciplineId(id: number, disciplineUpdate: DisciplineUpdate, options?: any): AxiosPromise<Discipline> {
+            return localVarFp.updateDisciplineId(id, disciplineUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * DisciplinesApi - object-oriented interface
+ * @export
+ * @class DisciplinesApi
+ * @extends {BaseAPI}
+ */
+export class DisciplinesApi extends BaseAPI {
+    /**
+     * Create new TypedDiscipline.
+     * @summary Create TypedDiscipline
+     * @param {DisciplineCreate} disciplineCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DisciplinesApi
+     */
+    public createDiscipline(disciplineCreate: DisciplineCreate, options?: AxiosRequestConfig) {
+        return DisciplinesApiFp(this.configuration).createDiscipline(disciplineCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an TypedDiscipline.
+     * @summary Delete TypedDiscipline Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DisciplinesApi
+     */
+    public deleteDisciplineId(id: number, options?: AxiosRequestConfig) {
+        return DisciplinesApiFp(this.configuration).deleteDisciplineId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get TypedDiscipline by ID.
+     * @summary Read TypedDiscipline Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DisciplinesApi
+     */
+    public readDisciplineId(id: number, options?: AxiosRequestConfig) {
+        return DisciplinesApiFp(this.configuration).readDisciplineId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Tasks.
+     * @summary Read Disciplines
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DisciplinesApi
+     */
+    public readDisciplines(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return DisciplinesApiFp(this.configuration).readDisciplines(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an TypedDiscipline.
+     * @summary Update TypedDiscipline Id
+     * @param {number} id 
+     * @param {DisciplineUpdate} disciplineUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DisciplinesApi
+     */
+    public updateDisciplineId(id: number, disciplineUpdate: DisciplineUpdate, options?: AxiosRequestConfig) {
+        return DisciplinesApiFp(this.configuration).updateDisciplineId(id, disciplineUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
  * LoginApi - axios parameter creator
  * @export
  */
@@ -1388,40 +2254,6 @@ export const LoginApiAxiosParamCreator = function (configuration?: Configuration
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Logout
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        logout: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/v1/logout`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication OAuth2PasswordBearer required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -1444,18 +2276,8 @@ export const LoginApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TokenPayload>> {
+        async loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Token>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Logout
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async logout(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.logout(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -1480,17 +2302,8 @@ export const LoginApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: any): AxiosPromise<TokenPayload> {
+        loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: any): AxiosPromise<Token> {
             return localVarFp.loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Logout
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        logout(options?: any): AxiosPromise<any> {
-            return localVarFp.logout(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1518,38 +2331,105 @@ export class LoginApi extends BaseAPI {
     public loginAccessToken(username: string, password: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: AxiosRequestConfig) {
         return LoginApiFp(this.configuration).loginAccessToken(username, password, grantType, scope, clientId, clientSecret, options).then((request) => request(this.axios, this.basePath));
     }
-
-    /**
-     * 
-     * @summary Logout
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof LoginApi
-     */
-    public logout(options?: AxiosRequestConfig) {
-        return LoginApiFp(this.configuration).logout(options).then((request) => request(this.axios, this.basePath));
-    }
 }
 
 
 /**
- * ReportApi - axios parameter creator
+ * StudentsApi - axios parameter creator
  * @export
  */
-export const ReportApiAxiosParamCreator = function (configuration?: Configuration) {
+export const StudentsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Generate report by user id.
-         * @summary Read Report
-         * @param {string} filename 
+         * Create new task.
+         * @summary Create Student
+         * @param {StudentCreate} studentCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readReport: async (filename: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'filename' is not null or undefined
-            assertParamExists('readReport', 'filename', filename)
-            const localVarPath = `/api/v1/report/report/{filename}`
-                .replace(`{${"filename"}}`, encodeURIComponent(String(filename)));
+        createStudent: async (studentCreate: StudentCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'studentCreate' is not null or undefined
+            assertParamExists('createStudent', 'studentCreate', studentCreate)
+            const localVarPath = `/api/v1/students/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studentCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudentId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteStudentId', 'id', id)
+            const localVarPath = `/api/v1/students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudentId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readStudentId', 'id', id)
+            const localVarPath = `/api/v1/students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1576,67 +2456,1985 @@ export const ReportApiAxiosParamCreator = function (configuration?: Configuratio
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudents: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/students/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an task.
+         * @summary Update Student Id
+         * @param {number} id 
+         * @param {StudentUpdate} studentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudentId: async (id: number, studentUpdate: StudentUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateStudentId', 'id', id)
+            // verify required parameter 'studentUpdate' is not null or undefined
+            assertParamExists('updateStudentId', 'studentUpdate', studentUpdate)
+            const localVarPath = `/api/v1/students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studentUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
 /**
- * ReportApi - functional programming interface
+ * StudentsApi - functional programming interface
  * @export
  */
-export const ReportApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ReportApiAxiosParamCreator(configuration)
+export const StudentsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = StudentsApiAxiosParamCreator(configuration)
     return {
         /**
-         * Generate report by user id.
-         * @summary Read Report
-         * @param {string} filename 
+         * Create new task.
+         * @summary Create Student
+         * @param {StudentCreate} studentCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readReport(filename: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readReport(filename, options);
+        async createStudent(studentCreate: StudentCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Student>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createStudent(studentCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteStudentId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Student>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStudentId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudentId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Student>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudentId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudents(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Student>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudents(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an task.
+         * @summary Update Student Id
+         * @param {number} id 
+         * @param {StudentUpdate} studentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateStudentId(id: number, studentUpdate: StudentUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Student>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateStudentId(id, studentUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * ReportApi - factory interface
+ * StudentsApi - factory interface
  * @export
  */
-export const ReportApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ReportApiFp(configuration)
+export const StudentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = StudentsApiFp(configuration)
     return {
         /**
-         * Generate report by user id.
-         * @summary Read Report
-         * @param {string} filename 
+         * Create new task.
+         * @summary Create Student
+         * @param {StudentCreate} studentCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readReport(filename: string, options?: any): AxiosPromise<void> {
-            return localVarFp.readReport(filename, options).then((request) => request(axios, basePath));
+        createStudent(studentCreate: StudentCreate, options?: any): AxiosPromise<Student> {
+            return localVarFp.createStudent(studentCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudentId(id: number, options?: any): AxiosPromise<Student> {
+            return localVarFp.deleteStudentId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudentId(id: number, options?: any): AxiosPromise<Student> {
+            return localVarFp.readStudentId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudents(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<Student>> {
+            return localVarFp.readStudents(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an task.
+         * @summary Update Student Id
+         * @param {number} id 
+         * @param {StudentUpdate} studentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudentId(id: number, studentUpdate: StudentUpdate, options?: any): AxiosPromise<Student> {
+            return localVarFp.updateStudentId(id, studentUpdate, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * ReportApi - object-oriented interface
+ * StudentsApi - object-oriented interface
  * @export
- * @class ReportApi
+ * @class StudentsApi
  * @extends {BaseAPI}
  */
-export class ReportApi extends BaseAPI {
+export class StudentsApi extends BaseAPI {
     /**
-     * Generate report by user id.
-     * @summary Read Report
-     * @param {string} filename 
+     * Create new task.
+     * @summary Create Student
+     * @param {StudentCreate} studentCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportApi
+     * @memberof StudentsApi
      */
-    public readReport(filename: string, options?: AxiosRequestConfig) {
-        return ReportApiFp(this.configuration).readReport(filename, options).then((request) => request(this.axios, this.basePath));
+    public createStudent(studentCreate: StudentCreate, options?: AxiosRequestConfig) {
+        return StudentsApiFp(this.configuration).createStudent(studentCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an task.
+     * @summary Delete Student Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudentsApi
+     */
+    public deleteStudentId(id: number, options?: AxiosRequestConfig) {
+        return StudentsApiFp(this.configuration).deleteStudentId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get task by ID.
+     * @summary Read Student Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudentsApi
+     */
+    public readStudentId(id: number, options?: AxiosRequestConfig) {
+        return StudentsApiFp(this.configuration).readStudentId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Tasks.
+     * @summary Read Students
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudentsApi
+     */
+    public readStudents(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return StudentsApiFp(this.configuration).readStudents(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an task.
+     * @summary Update Student Id
+     * @param {number} id 
+     * @param {StudentUpdate} studentUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudentsApi
+     */
+    public updateStudentId(id: number, studentUpdate: StudentUpdate, options?: AxiosRequestConfig) {
+        return StudentsApiFp(this.configuration).updateStudentId(id, studentUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * StudyGroupCiphersApi - axios parameter creator
+ * @export
+ */
+export const StudyGroupCiphersApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new task.
+         * @summary Create Study Group Cipher
+         * @param {StudyGroupCipherCreate} studyGroupCipherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createStudyGroupCipher: async (studyGroupCipherCreate: StudyGroupCipherCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'studyGroupCipherCreate' is not null or undefined
+            assertParamExists('createStudyGroupCipher', 'studyGroupCipherCreate', studyGroupCipherCreate)
+            const localVarPath = `/api/v1/study_group_ciphers/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studyGroupCipherCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudyGroupCipherId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteStudyGroupCipherId', 'id', id)
+            const localVarPath = `/api/v1/study_group_ciphers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupCipherId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readStudyGroupCipherId', 'id', id)
+            const localVarPath = `/api/v1/study_group_ciphers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve StudyGroupCipher.
+         * @summary Read Study Group Ciphers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupCiphers: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/study_group_ciphers/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an task.
+         * @summary Update Study Group Cipher Id
+         * @param {number} id 
+         * @param {StudyGroupCipherUpdate} studyGroupCipherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudyGroupCipherId: async (id: number, studyGroupCipherUpdate: StudyGroupCipherUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateStudyGroupCipherId', 'id', id)
+            // verify required parameter 'studyGroupCipherUpdate' is not null or undefined
+            assertParamExists('updateStudyGroupCipherId', 'studyGroupCipherUpdate', studyGroupCipherUpdate)
+            const localVarPath = `/api/v1/study_group_ciphers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studyGroupCipherUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * StudyGroupCiphersApi - functional programming interface
+ * @export
+ */
+export const StudyGroupCiphersApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = StudyGroupCiphersApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Study Group Cipher
+         * @param {StudyGroupCipherCreate} studyGroupCipherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createStudyGroupCipher(studyGroupCipherCreate: StudyGroupCipherCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroupCipher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createStudyGroupCipher(studyGroupCipherCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteStudyGroupCipherId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroupCipher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStudyGroupCipherId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudyGroupCipherId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroupCipher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudyGroupCipherId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve StudyGroupCipher.
+         * @summary Read Study Group Ciphers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudyGroupCiphers(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<StudyGroupCipher>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudyGroupCiphers(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an task.
+         * @summary Update Study Group Cipher Id
+         * @param {number} id 
+         * @param {StudyGroupCipherUpdate} studyGroupCipherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateStudyGroupCipherId(id: number, studyGroupCipherUpdate: StudyGroupCipherUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroupCipher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateStudyGroupCipherId(id, studyGroupCipherUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * StudyGroupCiphersApi - factory interface
+ * @export
+ */
+export const StudyGroupCiphersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = StudyGroupCiphersApiFp(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Study Group Cipher
+         * @param {StudyGroupCipherCreate} studyGroupCipherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createStudyGroupCipher(studyGroupCipherCreate: StudyGroupCipherCreate, options?: any): AxiosPromise<StudyGroupCipher> {
+            return localVarFp.createStudyGroupCipher(studyGroupCipherCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudyGroupCipherId(id: number, options?: any): AxiosPromise<StudyGroupCipher> {
+            return localVarFp.deleteStudyGroupCipherId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Study Group Cipher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupCipherId(id: number, options?: any): AxiosPromise<StudyGroupCipher> {
+            return localVarFp.readStudyGroupCipherId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve StudyGroupCipher.
+         * @summary Read Study Group Ciphers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupCiphers(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<StudyGroupCipher>> {
+            return localVarFp.readStudyGroupCiphers(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an task.
+         * @summary Update Study Group Cipher Id
+         * @param {number} id 
+         * @param {StudyGroupCipherUpdate} studyGroupCipherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudyGroupCipherId(id: number, studyGroupCipherUpdate: StudyGroupCipherUpdate, options?: any): AxiosPromise<StudyGroupCipher> {
+            return localVarFp.updateStudyGroupCipherId(id, studyGroupCipherUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * StudyGroupCiphersApi - object-oriented interface
+ * @export
+ * @class StudyGroupCiphersApi
+ * @extends {BaseAPI}
+ */
+export class StudyGroupCiphersApi extends BaseAPI {
+    /**
+     * Create new task.
+     * @summary Create Study Group Cipher
+     * @param {StudyGroupCipherCreate} studyGroupCipherCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupCiphersApi
+     */
+    public createStudyGroupCipher(studyGroupCipherCreate: StudyGroupCipherCreate, options?: AxiosRequestConfig) {
+        return StudyGroupCiphersApiFp(this.configuration).createStudyGroupCipher(studyGroupCipherCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an task.
+     * @summary Delete Study Group Cipher Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupCiphersApi
+     */
+    public deleteStudyGroupCipherId(id: number, options?: AxiosRequestConfig) {
+        return StudyGroupCiphersApiFp(this.configuration).deleteStudyGroupCipherId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get task by ID.
+     * @summary Read Study Group Cipher Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupCiphersApi
+     */
+    public readStudyGroupCipherId(id: number, options?: AxiosRequestConfig) {
+        return StudyGroupCiphersApiFp(this.configuration).readStudyGroupCipherId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve StudyGroupCipher.
+     * @summary Read Study Group Ciphers
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupCiphersApi
+     */
+    public readStudyGroupCiphers(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return StudyGroupCiphersApiFp(this.configuration).readStudyGroupCiphers(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an task.
+     * @summary Update Study Group Cipher Id
+     * @param {number} id 
+     * @param {StudyGroupCipherUpdate} studyGroupCipherUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupCiphersApi
+     */
+    public updateStudyGroupCipherId(id: number, studyGroupCipherUpdate: StudyGroupCipherUpdate, options?: AxiosRequestConfig) {
+        return StudyGroupCiphersApiFp(this.configuration).updateStudyGroupCipherId(id, studyGroupCipherUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * StudyGroupsApi - axios parameter creator
+ * @export
+ */
+export const StudyGroupsApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new StudyGroup.
+         * @summary Create Study Group
+         * @param {StudyGroupCreate} studyGroupCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createStudyGroup: async (studyGroupCreate: StudyGroupCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'studyGroupCreate' is not null or undefined
+            assertParamExists('createStudyGroup', 'studyGroupCreate', studyGroupCreate)
+            const localVarPath = `/api/v1/study_groups/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studyGroupCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an StudyGroup.
+         * @summary Delete Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudyGroupId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteStudyGroupId', 'id', id)
+            const localVarPath = `/api/v1/study_groups/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve StudyGroups.
+         * @summary Read Study Group
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroup: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/study_groups/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get StudyGroup by ID.
+         * @summary Read Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readStudyGroupId', 'id', id)
+            const localVarPath = `/api/v1/study_groups/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an StudyGroup.
+         * @summary Update Study Group Id
+         * @param {number} id 
+         * @param {StudyGroupUpdate} studyGroupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudyGroupId: async (id: number, studyGroupUpdate: StudyGroupUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateStudyGroupId', 'id', id)
+            // verify required parameter 'studyGroupUpdate' is not null or undefined
+            assertParamExists('updateStudyGroupId', 'studyGroupUpdate', studyGroupUpdate)
+            const localVarPath = `/api/v1/study_groups/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(studyGroupUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * StudyGroupsApi - functional programming interface
+ * @export
+ */
+export const StudyGroupsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = StudyGroupsApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new StudyGroup.
+         * @summary Create Study Group
+         * @param {StudyGroupCreate} studyGroupCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createStudyGroup(studyGroupCreate: StudyGroupCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createStudyGroup(studyGroupCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an StudyGroup.
+         * @summary Delete Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteStudyGroupId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStudyGroupId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve StudyGroups.
+         * @summary Read Study Group
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudyGroup(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<StudyGroup>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudyGroup(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get StudyGroup by ID.
+         * @summary Read Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readStudyGroupId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readStudyGroupId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an StudyGroup.
+         * @summary Update Study Group Id
+         * @param {number} id 
+         * @param {StudyGroupUpdate} studyGroupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateStudyGroupId(id: number, studyGroupUpdate: StudyGroupUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StudyGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateStudyGroupId(id, studyGroupUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * StudyGroupsApi - factory interface
+ * @export
+ */
+export const StudyGroupsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = StudyGroupsApiFp(configuration)
+    return {
+        /**
+         * Create new StudyGroup.
+         * @summary Create Study Group
+         * @param {StudyGroupCreate} studyGroupCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createStudyGroup(studyGroupCreate: StudyGroupCreate, options?: any): AxiosPromise<StudyGroup> {
+            return localVarFp.createStudyGroup(studyGroupCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an StudyGroup.
+         * @summary Delete Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteStudyGroupId(id: number, options?: any): AxiosPromise<StudyGroup> {
+            return localVarFp.deleteStudyGroupId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve StudyGroups.
+         * @summary Read Study Group
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroup(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<StudyGroup>> {
+            return localVarFp.readStudyGroup(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get StudyGroup by ID.
+         * @summary Read Study Group Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readStudyGroupId(id: number, options?: any): AxiosPromise<StudyGroup> {
+            return localVarFp.readStudyGroupId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an StudyGroup.
+         * @summary Update Study Group Id
+         * @param {number} id 
+         * @param {StudyGroupUpdate} studyGroupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStudyGroupId(id: number, studyGroupUpdate: StudyGroupUpdate, options?: any): AxiosPromise<StudyGroup> {
+            return localVarFp.updateStudyGroupId(id, studyGroupUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * StudyGroupsApi - object-oriented interface
+ * @export
+ * @class StudyGroupsApi
+ * @extends {BaseAPI}
+ */
+export class StudyGroupsApi extends BaseAPI {
+    /**
+     * Create new StudyGroup.
+     * @summary Create Study Group
+     * @param {StudyGroupCreate} studyGroupCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupsApi
+     */
+    public createStudyGroup(studyGroupCreate: StudyGroupCreate, options?: AxiosRequestConfig) {
+        return StudyGroupsApiFp(this.configuration).createStudyGroup(studyGroupCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an StudyGroup.
+     * @summary Delete Study Group Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupsApi
+     */
+    public deleteStudyGroupId(id: number, options?: AxiosRequestConfig) {
+        return StudyGroupsApiFp(this.configuration).deleteStudyGroupId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve StudyGroups.
+     * @summary Read Study Group
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupsApi
+     */
+    public readStudyGroup(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return StudyGroupsApiFp(this.configuration).readStudyGroup(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get StudyGroup by ID.
+     * @summary Read Study Group Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupsApi
+     */
+    public readStudyGroupId(id: number, options?: AxiosRequestConfig) {
+        return StudyGroupsApiFp(this.configuration).readStudyGroupId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an StudyGroup.
+     * @summary Update Study Group Id
+     * @param {number} id 
+     * @param {StudyGroupUpdate} studyGroupUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StudyGroupsApi
+     */
+    public updateStudyGroupId(id: number, studyGroupUpdate: StudyGroupUpdate, options?: AxiosRequestConfig) {
+        return StudyGroupsApiFp(this.configuration).updateStudyGroupId(id, studyGroupUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * TaskStoresApi - axios parameter creator
+ * @export
+ */
+export const TaskStoresApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new task_store.
+         * @summary Create Task Store
+         * @param {TaskStoreCreate} taskStoreCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaskStore: async (taskStoreCreate: TaskStoreCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'taskStoreCreate' is not null or undefined
+            assertParamExists('createTaskStore', 'taskStoreCreate', taskStoreCreate)
+            const localVarPath = `/api/v1/task_stores/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(taskStoreCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an task_store.
+         * @summary Delete Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTaskStore: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteTaskStore', 'id', id)
+            const localVarPath = `/api/v1/task_stores/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get task_store by ID.
+         * @summary Read Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStore: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readTaskStore', 'id', id)
+            const localVarPath = `/api/v1/task_stores/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve TaskStores.
+         * @summary Read Task Stores
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStores: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/task_stores/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an task_store.
+         * @summary Update Task Store
+         * @param {number} id 
+         * @param {TaskStoreUpdate} taskStoreUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTaskStore: async (id: number, taskStoreUpdate: TaskStoreUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateTaskStore', 'id', id)
+            // verify required parameter 'taskStoreUpdate' is not null or undefined
+            assertParamExists('updateTaskStore', 'taskStoreUpdate', taskStoreUpdate)
+            const localVarPath = `/api/v1/task_stores/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(taskStoreUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TaskStoresApi - functional programming interface
+ * @export
+ */
+export const TaskStoresApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TaskStoresApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new task_store.
+         * @summary Create Task Store
+         * @param {TaskStoreCreate} taskStoreCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createTaskStore(taskStoreCreate: TaskStoreCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStore>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTaskStore(taskStoreCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an task_store.
+         * @summary Delete Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteTaskStore(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStore>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTaskStore(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get task_store by ID.
+         * @summary Read Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTaskStore(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStore>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTaskStore(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve TaskStores.
+         * @summary Read Task Stores
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTaskStores(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TaskStore>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTaskStores(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an task_store.
+         * @summary Update Task Store
+         * @param {number} id 
+         * @param {TaskStoreUpdate} taskStoreUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateTaskStore(id: number, taskStoreUpdate: TaskStoreUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStore>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateTaskStore(id, taskStoreUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * TaskStoresApi - factory interface
+ * @export
+ */
+export const TaskStoresApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TaskStoresApiFp(configuration)
+    return {
+        /**
+         * Create new task_store.
+         * @summary Create Task Store
+         * @param {TaskStoreCreate} taskStoreCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaskStore(taskStoreCreate: TaskStoreCreate, options?: any): AxiosPromise<TaskStore> {
+            return localVarFp.createTaskStore(taskStoreCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an task_store.
+         * @summary Delete Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTaskStore(id: number, options?: any): AxiosPromise<TaskStore> {
+            return localVarFp.deleteTaskStore(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get task_store by ID.
+         * @summary Read Task Store
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStore(id: number, options?: any): AxiosPromise<TaskStore> {
+            return localVarFp.readTaskStore(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve TaskStores.
+         * @summary Read Task Stores
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStores(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<TaskStore>> {
+            return localVarFp.readTaskStores(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an task_store.
+         * @summary Update Task Store
+         * @param {number} id 
+         * @param {TaskStoreUpdate} taskStoreUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTaskStore(id: number, taskStoreUpdate: TaskStoreUpdate, options?: any): AxiosPromise<TaskStore> {
+            return localVarFp.updateTaskStore(id, taskStoreUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TaskStoresApi - object-oriented interface
+ * @export
+ * @class TaskStoresApi
+ * @extends {BaseAPI}
+ */
+export class TaskStoresApi extends BaseAPI {
+    /**
+     * Create new task_store.
+     * @summary Create Task Store
+     * @param {TaskStoreCreate} taskStoreCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStoresApi
+     */
+    public createTaskStore(taskStoreCreate: TaskStoreCreate, options?: AxiosRequestConfig) {
+        return TaskStoresApiFp(this.configuration).createTaskStore(taskStoreCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an task_store.
+     * @summary Delete Task Store
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStoresApi
+     */
+    public deleteTaskStore(id: number, options?: AxiosRequestConfig) {
+        return TaskStoresApiFp(this.configuration).deleteTaskStore(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get task_store by ID.
+     * @summary Read Task Store
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStoresApi
+     */
+    public readTaskStore(id: number, options?: AxiosRequestConfig) {
+        return TaskStoresApiFp(this.configuration).readTaskStore(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve TaskStores.
+     * @summary Read Task Stores
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStoresApi
+     */
+    public readTaskStores(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return TaskStoresApiFp(this.configuration).readTaskStores(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an task_store.
+     * @summary Update Task Store
+     * @param {number} id 
+     * @param {TaskStoreUpdate} taskStoreUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStoresApi
+     */
+    public updateTaskStore(id: number, taskStoreUpdate: TaskStoreUpdate, options?: AxiosRequestConfig) {
+        return TaskStoresApiFp(this.configuration).updateTaskStore(id, taskStoreUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * TaskStudentsApi - axios parameter creator
+ * @export
+ */
+export const TaskStudentsApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new task.
+         * @summary Create Task Student
+         * @param {TaskStudentCreate} taskStudentCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaskStudent: async (taskStudentCreate: TaskStudentCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'taskStudentCreate' is not null or undefined
+            assertParamExists('createTaskStudent', 'taskStudentCreate', taskStudentCreate)
+            const localVarPath = `/api/v1/task_students/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(taskStudentCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTaskStudentId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteTaskStudentId', 'id', id)
+            const localVarPath = `/api/v1/task_students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStudentId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readTaskStudentId', 'id', id)
+            const localVarPath = `/api/v1/task_students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Task Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStudents: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/task_students/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an task.
+         * @summary Update Task Student Id
+         * @param {number} id 
+         * @param {TaskStudentUpdate} taskStudentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTaskStudentId: async (id: number, taskStudentUpdate: TaskStudentUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateTaskStudentId', 'id', id)
+            // verify required parameter 'taskStudentUpdate' is not null or undefined
+            assertParamExists('updateTaskStudentId', 'taskStudentUpdate', taskStudentUpdate)
+            const localVarPath = `/api/v1/task_students/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(taskStudentUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TaskStudentsApi - functional programming interface
+ * @export
+ */
+export const TaskStudentsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TaskStudentsApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Task Student
+         * @param {TaskStudentCreate} taskStudentCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createTaskStudent(taskStudentCreate: TaskStudentCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStudent>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTaskStudent(taskStudentCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteTaskStudentId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStudent>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTaskStudentId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTaskStudentId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStudent>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTaskStudentId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Task Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTaskStudents(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TaskStudent>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTaskStudents(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an task.
+         * @summary Update Task Student Id
+         * @param {number} id 
+         * @param {TaskStudentUpdate} taskStudentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateTaskStudentId(id: number, taskStudentUpdate: TaskStudentUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskStudent>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateTaskStudentId(id, taskStudentUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * TaskStudentsApi - factory interface
+ * @export
+ */
+export const TaskStudentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TaskStudentsApiFp(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Task Student
+         * @param {TaskStudentCreate} taskStudentCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaskStudent(taskStudentCreate: TaskStudentCreate, options?: any): AxiosPromise<TaskStudent> {
+            return localVarFp.createTaskStudent(taskStudentCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTaskStudentId(id: number, options?: any): AxiosPromise<TaskStudent> {
+            return localVarFp.deleteTaskStudentId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Task Student Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStudentId(id: number, options?: any): AxiosPromise<TaskStudent> {
+            return localVarFp.readTaskStudentId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Task Students
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTaskStudents(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<TaskStudent>> {
+            return localVarFp.readTaskStudents(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an task.
+         * @summary Update Task Student Id
+         * @param {number} id 
+         * @param {TaskStudentUpdate} taskStudentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTaskStudentId(id: number, taskStudentUpdate: TaskStudentUpdate, options?: any): AxiosPromise<TaskStudent> {
+            return localVarFp.updateTaskStudentId(id, taskStudentUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TaskStudentsApi - object-oriented interface
+ * @export
+ * @class TaskStudentsApi
+ * @extends {BaseAPI}
+ */
+export class TaskStudentsApi extends BaseAPI {
+    /**
+     * Create new task.
+     * @summary Create Task Student
+     * @param {TaskStudentCreate} taskStudentCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStudentsApi
+     */
+    public createTaskStudent(taskStudentCreate: TaskStudentCreate, options?: AxiosRequestConfig) {
+        return TaskStudentsApiFp(this.configuration).createTaskStudent(taskStudentCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an task.
+     * @summary Delete Task Student Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStudentsApi
+     */
+    public deleteTaskStudentId(id: number, options?: AxiosRequestConfig) {
+        return TaskStudentsApiFp(this.configuration).deleteTaskStudentId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get task by ID.
+     * @summary Read Task Student Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStudentsApi
+     */
+    public readTaskStudentId(id: number, options?: AxiosRequestConfig) {
+        return TaskStudentsApiFp(this.configuration).readTaskStudentId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Tasks.
+     * @summary Read Task Students
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStudentsApi
+     */
+    public readTaskStudents(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return TaskStudentsApiFp(this.configuration).readTaskStudents(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an task.
+     * @summary Update Task Student Id
+     * @param {number} id 
+     * @param {TaskStudentUpdate} taskStudentUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskStudentsApi
+     */
+    public updateTaskStudentId(id: number, taskStudentUpdate: TaskStudentUpdate, options?: AxiosRequestConfig) {
+        return TaskStudentsApiFp(this.configuration).updateTaskStudentId(id, taskStudentUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -1681,46 +4479,6 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(taskCreate, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Generate report by task id.
-         * @summary Create Task Report
-         * @param {ReportTaskCreate} reportTaskCreate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createTaskReport: async (reportTaskCreate: ReportTaskCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'reportTaskCreate' is not null or undefined
-            assertParamExists('createTaskReport', 'reportTaskCreate', reportTaskCreate)
-            const localVarPath = `/api/v1/tasks/report`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication OAuth2PasswordBearer required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(reportTaskCreate, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -1808,7 +4566,7 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Read Tasks
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1918,17 +4676,6 @@ export const TasksApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Generate report by task id.
-         * @summary Create Task Report
-         * @param {ReportTaskCreate} reportTaskCreate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async createTaskReport(reportTaskCreate: ReportTaskCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createTaskReport(reportTaskCreate, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * Delete an task.
          * @summary Delete Task
          * @param {number} id 
@@ -1955,7 +4702,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
          * @summary Read Tasks
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1996,16 +4743,6 @@ export const TasksApiFactory = function (configuration?: Configuration, basePath
             return localVarFp.createTask(taskCreate, options).then((request) => request(axios, basePath));
         },
         /**
-         * Generate report by task id.
-         * @summary Create Task Report
-         * @param {ReportTaskCreate} reportTaskCreate 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createTaskReport(reportTaskCreate: ReportTaskCreate, options?: any): AxiosPromise<void> {
-            return localVarFp.createTaskReport(reportTaskCreate, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Delete an task.
          * @summary Delete Task
          * @param {number} id 
@@ -2030,7 +4767,7 @@ export const TasksApiFactory = function (configuration?: Configuration, basePath
          * @summary Read Tasks
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2071,18 +4808,6 @@ export class TasksApi extends BaseAPI {
     }
 
     /**
-     * Generate report by task id.
-     * @summary Create Task Report
-     * @param {ReportTaskCreate} reportTaskCreate 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof TasksApi
-     */
-    public createTaskReport(reportTaskCreate: ReportTaskCreate, options?: AxiosRequestConfig) {
-        return TasksApiFp(this.configuration).createTaskReport(reportTaskCreate, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Delete an task.
      * @summary Delete Task
      * @param {number} id 
@@ -2111,7 +4836,7 @@ export class TasksApi extends BaseAPI {
      * @summary Read Tasks
      * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
      * @param {string} [range] Format: &#x60;[start, end]&#x60;
-     * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TasksApi
@@ -2131,6 +4856,848 @@ export class TasksApi extends BaseAPI {
      */
     public updateTask(id: number, taskUpdate: TaskUpdate, options?: AxiosRequestConfig) {
         return TasksApiFp(this.configuration).updateTask(id, taskUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * TeachersApi - axios parameter creator
+ * @export
+ */
+export const TeachersApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new task.
+         * @summary Create Teacher
+         * @param {TeacherCreate} teacherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTeacher: async (teacherCreate: TeacherCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'teacherCreate' is not null or undefined
+            assertParamExists('createTeacher', 'teacherCreate', teacherCreate)
+            const localVarPath = `/api/v1/teachers/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(teacherCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTeacherId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteTeacherId', 'id', id)
+            const localVarPath = `/api/v1/teachers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTeacherId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readTeacherId', 'id', id)
+            const localVarPath = `/api/v1/teachers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Teachers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTeachers: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/teachers/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an task.
+         * @summary Update Teacher Id
+         * @param {number} id 
+         * @param {TeacherUpdate} teacherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTeacherId: async (id: number, teacherUpdate: TeacherUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateTeacherId', 'id', id)
+            // verify required parameter 'teacherUpdate' is not null or undefined
+            assertParamExists('updateTeacherId', 'teacherUpdate', teacherUpdate)
+            const localVarPath = `/api/v1/teachers/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(teacherUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TeachersApi - functional programming interface
+ * @export
+ */
+export const TeachersApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TeachersApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Teacher
+         * @param {TeacherCreate} teacherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createTeacher(teacherCreate: TeacherCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Teacher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTeacher(teacherCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteTeacherId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Teacher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTeacherId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTeacherId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Teacher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTeacherId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Teachers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readTeachers(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Teacher>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readTeachers(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an task.
+         * @summary Update Teacher Id
+         * @param {number} id 
+         * @param {TeacherUpdate} teacherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateTeacherId(id: number, teacherUpdate: TeacherUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Teacher>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateTeacherId(id, teacherUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * TeachersApi - factory interface
+ * @export
+ */
+export const TeachersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TeachersApiFp(configuration)
+    return {
+        /**
+         * Create new task.
+         * @summary Create Teacher
+         * @param {TeacherCreate} teacherCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTeacher(teacherCreate: TeacherCreate, options?: any): AxiosPromise<Teacher> {
+            return localVarFp.createTeacher(teacherCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an task.
+         * @summary Delete Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTeacherId(id: number, options?: any): AxiosPromise<Teacher> {
+            return localVarFp.deleteTeacherId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get task by ID.
+         * @summary Read Teacher Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTeacherId(id: number, options?: any): AxiosPromise<Teacher> {
+            return localVarFp.readTeacherId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve Tasks.
+         * @summary Read Teachers
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readTeachers(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<Teacher>> {
+            return localVarFp.readTeachers(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an task.
+         * @summary Update Teacher Id
+         * @param {number} id 
+         * @param {TeacherUpdate} teacherUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTeacherId(id: number, teacherUpdate: TeacherUpdate, options?: any): AxiosPromise<Teacher> {
+            return localVarFp.updateTeacherId(id, teacherUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TeachersApi - object-oriented interface
+ * @export
+ * @class TeachersApi
+ * @extends {BaseAPI}
+ */
+export class TeachersApi extends BaseAPI {
+    /**
+     * Create new task.
+     * @summary Create Teacher
+     * @param {TeacherCreate} teacherCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TeachersApi
+     */
+    public createTeacher(teacherCreate: TeacherCreate, options?: AxiosRequestConfig) {
+        return TeachersApiFp(this.configuration).createTeacher(teacherCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an task.
+     * @summary Delete Teacher Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TeachersApi
+     */
+    public deleteTeacherId(id: number, options?: AxiosRequestConfig) {
+        return TeachersApiFp(this.configuration).deleteTeacherId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get task by ID.
+     * @summary Read Teacher Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TeachersApi
+     */
+    public readTeacherId(id: number, options?: AxiosRequestConfig) {
+        return TeachersApiFp(this.configuration).readTeacherId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve Tasks.
+     * @summary Read Teachers
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TeachersApi
+     */
+    public readTeachers(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return TeachersApiFp(this.configuration).readTeachers(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an task.
+     * @summary Update Teacher Id
+     * @param {number} id 
+     * @param {TeacherUpdate} teacherUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TeachersApi
+     */
+    public updateTeacherId(id: number, teacherUpdate: TeacherUpdate, options?: AxiosRequestConfig) {
+        return TeachersApiFp(this.configuration).updateTeacherId(id, teacherUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * TypedDisciplinesApi - axios parameter creator
+ * @export
+ */
+export const TypedDisciplinesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create new DisciplineTyped.
+         * @summary Create TypedDiscipline Typed
+         * @param {DisciplineTypedCreate} disciplineTypedCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDisciplineTyped: async (disciplineTypedCreate: DisciplineTypedCreate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'disciplineTypedCreate' is not null or undefined
+            assertParamExists('createDisciplineTyped', 'disciplineTypedCreate', disciplineTypedCreate)
+            const localVarPath = `/api/v1/typed_disciplines/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(disciplineTypedCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete an DisciplineTyped.
+         * @summary Delete TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDisciplineTypedId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteDisciplineTypedId', 'id', id)
+            const localVarPath = `/api/v1/typed_disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve DisciplineTyped.
+         * @summary Read TypedDiscipline Typed
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineTyped: async (sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v1/typed_disciplines/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (range !== undefined) {
+                localVarQueryParameter['range'] = range;
+            }
+
+            if (filter !== undefined) {
+                localVarQueryParameter['filter'] = filter;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get DisciplineTyped by ID.
+         * @summary Read TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineTypedId: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('readDisciplineTypedId', 'id', id)
+            const localVarPath = `/api/v1/typed_disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update an DisciplineTyped.
+         * @summary Update TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {DisciplineTypedUpdate} disciplineTypedUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDisciplineTypedId: async (id: number, disciplineTypedUpdate: DisciplineTypedUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateDisciplineTypedId', 'id', id)
+            // verify required parameter 'disciplineTypedUpdate' is not null or undefined
+            assertParamExists('updateDisciplineTypedId', 'disciplineTypedUpdate', disciplineTypedUpdate)
+            const localVarPath = `/api/v1/typed_disciplines/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication OAuth2PasswordBearer required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(disciplineTypedUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TypedDisciplinesApi - functional programming interface
+ * @export
+ */
+export const TypedDisciplinesApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TypedDisciplinesApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Create new DisciplineTyped.
+         * @summary Create TypedDiscipline Typed
+         * @param {DisciplineTypedCreate} disciplineTypedCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createDisciplineTyped(disciplineTypedCreate: DisciplineTypedCreate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisciplineTyped>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createDisciplineTyped(disciplineTypedCreate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete an DisciplineTyped.
+         * @summary Delete TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteDisciplineTypedId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisciplineTyped>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDisciplineTypedId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Retrieve DisciplineTyped.
+         * @summary Read TypedDiscipline Typed
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readDisciplineTyped(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<DisciplineTyped>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readDisciplineTyped(sort, range, filter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get DisciplineTyped by ID.
+         * @summary Read TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async readDisciplineTypedId(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisciplineTyped>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readDisciplineTypedId(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update an DisciplineTyped.
+         * @summary Update TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {DisciplineTypedUpdate} disciplineTypedUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateDisciplineTypedId(id: number, disciplineTypedUpdate: DisciplineTypedUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisciplineTyped>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDisciplineTypedId(id, disciplineTypedUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * TypedDisciplinesApi - factory interface
+ * @export
+ */
+export const TypedDisciplinesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TypedDisciplinesApiFp(configuration)
+    return {
+        /**
+         * Create new DisciplineTyped.
+         * @summary Create TypedDiscipline Typed
+         * @param {DisciplineTypedCreate} disciplineTypedCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDisciplineTyped(disciplineTypedCreate: DisciplineTypedCreate, options?: any): AxiosPromise<DisciplineTyped> {
+            return localVarFp.createDisciplineTyped(disciplineTypedCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete an DisciplineTyped.
+         * @summary Delete TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDisciplineTypedId(id: number, options?: any): AxiosPromise<DisciplineTyped> {
+            return localVarFp.deleteDisciplineTypedId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve DisciplineTyped.
+         * @summary Read TypedDiscipline Typed
+         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+         * @param {string} [range] Format: &#x60;[start, end]&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineTyped(sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<DisciplineTyped>> {
+            return localVarFp.readDisciplineTyped(sort, range, filter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get DisciplineTyped by ID.
+         * @summary Read TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        readDisciplineTypedId(id: number, options?: any): AxiosPromise<DisciplineTyped> {
+            return localVarFp.readDisciplineTypedId(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update an DisciplineTyped.
+         * @summary Update TypedDiscipline Typed Id
+         * @param {number} id 
+         * @param {DisciplineTypedUpdate} disciplineTypedUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDisciplineTypedId(id: number, disciplineTypedUpdate: DisciplineTypedUpdate, options?: any): AxiosPromise<DisciplineTyped> {
+            return localVarFp.updateDisciplineTypedId(id, disciplineTypedUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TypedDisciplinesApi - object-oriented interface
+ * @export
+ * @class TypedDisciplinesApi
+ * @extends {BaseAPI}
+ */
+export class TypedDisciplinesApi extends BaseAPI {
+    /**
+     * Create new DisciplineTyped.
+     * @summary Create TypedDiscipline Typed
+     * @param {DisciplineTypedCreate} disciplineTypedCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TypedDisciplinesApi
+     */
+    public createDisciplineTyped(disciplineTypedCreate: DisciplineTypedCreate, options?: AxiosRequestConfig) {
+        return TypedDisciplinesApiFp(this.configuration).createDisciplineTyped(disciplineTypedCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete an DisciplineTyped.
+     * @summary Delete TypedDiscipline Typed Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TypedDisciplinesApi
+     */
+    public deleteDisciplineTypedId(id: number, options?: AxiosRequestConfig) {
+        return TypedDisciplinesApiFp(this.configuration).deleteDisciplineTypedId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve DisciplineTyped.
+     * @summary Read TypedDiscipline Typed
+     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
+     * @param {string} [range] Format: &#x60;[start, end]&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TypedDisciplinesApi
+     */
+    public readDisciplineTyped(sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return TypedDisciplinesApiFp(this.configuration).readDisciplineTyped(sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get DisciplineTyped by ID.
+     * @summary Read TypedDiscipline Typed Id
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TypedDisciplinesApi
+     */
+    public readDisciplineTypedId(id: number, options?: AxiosRequestConfig) {
+        return TypedDisciplinesApiFp(this.configuration).readDisciplineTypedId(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update an DisciplineTyped.
+     * @summary Update TypedDiscipline Typed Id
+     * @param {number} id 
+     * @param {DisciplineTypedUpdate} disciplineTypedUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TypedDisciplinesApi
+     */
+    public updateDisciplineTypedId(id: number, disciplineTypedUpdate: DisciplineTypedUpdate, options?: AxiosRequestConfig) {
+        return TypedDisciplinesApiFp(this.configuration).updateDisciplineTypedId(id, disciplineTypedUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -2336,7 +5903,7 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Read Users
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2382,76 +5949,19 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * Retrieve users.
-         * @summary Read Users By Role
-         * @param {string} rolname 
-         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
-         * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        readUsersByRole: async (rolname: string, sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'rolname' is not null or undefined
-            assertParamExists('readUsersByRole', 'rolname', rolname)
-            const localVarPath = `/api/v1/users/role/{rolname}`
-                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication OAuth2PasswordBearer required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "OAuth2PasswordBearer", [], configuration)
-
-            if (sort !== undefined) {
-                localVarQueryParameter['sort'] = sort;
-            }
-
-            if (range !== undefined) {
-                localVarQueryParameter['range'] = range;
-            }
-
-            if (filter !== undefined) {
-                localVarQueryParameter['filter'] = filter;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve users.
          * @summary Read Users By Role Id
          * @param {string} rolname 
-         * @param {number} id 
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUsersByRoleId: async (rolname: string, id: number, sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        readUsersByRoleId: async (rolname: string, sort?: string, range?: string, filter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'rolname' is not null or undefined
             assertParamExists('readUsersByRoleId', 'rolname', rolname)
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('readUsersByRoleId', 'id', id)
-            const localVarPath = `/api/v1/users/role/{rolname}/{id}`
-                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)))
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            const localVarPath = `/api/v1/users/role/{rolname}`
+                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -2538,17 +6048,21 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
          * Update a user by role.
          * @summary Update User By Role
          * @param {string} rolname 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateUserByRole: async (rolname: string, userUpdate: UserUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateUserByRole: async (rolname: string, id: number, userUpdate: UserUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'rolname' is not null or undefined
             assertParamExists('updateUserByRole', 'rolname', rolname)
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateUserByRole', 'id', id)
             // verify required parameter 'userUpdate' is not null or undefined
             assertParamExists('updateUserByRole', 'userUpdate', userUpdate)
-            const localVarPath = `/api/v1/users/role/{rolname}`
-                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)));
+            const localVarPath = `/api/v1/users/role/{rolname}/{id}`
+                .replace(`{${"rolname"}}`, encodeURIComponent(String(rolname)))
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -2685,7 +6199,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @summary Read Users
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2695,31 +6209,16 @@ export const UsersApiFp = function(configuration?: Configuration) {
         },
         /**
          * Retrieve users.
-         * @summary Read Users By Role
-         * @param {string} rolname 
-         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
-         * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async readUsersByRole(rolname: string, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsersByRole(rolname, sort, range, filter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Retrieve users.
          * @summary Read Users By Role Id
          * @param {string} rolname 
-         * @param {number} id 
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async readUsersByRoleId(rolname: string, id: number, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsersByRoleId(rolname, id, sort, range, filter, options);
+        async readUsersByRoleId(rolname: string, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<User>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.readUsersByRoleId(rolname, sort, range, filter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2738,12 +6237,13 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * Update a user by role.
          * @summary Update User By Role
          * @param {string} rolname 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateUserByRole(rolname: string, userUpdate: UserUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUserByRole(rolname, userUpdate, options);
+        async updateUserByRole(rolname: string, id: number, userUpdate: UserUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUserByRole(rolname, id, userUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2821,7 +6321,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @summary Read Users
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2830,30 +6330,16 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
         },
         /**
          * Retrieve users.
-         * @summary Read Users By Role
-         * @param {string} rolname 
-         * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
-         * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        readUsersByRole(rolname: string, sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<User>> {
-            return localVarFp.readUsersByRole(rolname, sort, range, filter, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve users.
          * @summary Read Users By Role Id
          * @param {string} rolname 
-         * @param {number} id 
          * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
          * @param {string} [range] Format: &#x60;[start, end]&#x60;
-         * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+         * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        readUsersByRoleId(rolname: string, id: number, sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<User> {
-            return localVarFp.readUsersByRoleId(rolname, id, sort, range, filter, options).then((request) => request(axios, basePath));
+        readUsersByRoleId(rolname: string, sort?: string, range?: string, filter?: string, options?: any): AxiosPromise<Array<User>> {
+            return localVarFp.readUsersByRoleId(rolname, sort, range, filter, options).then((request) => request(axios, basePath));
         },
         /**
          * Update a user.
@@ -2870,12 +6356,13 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * Update a user by role.
          * @summary Update User By Role
          * @param {string} rolname 
+         * @param {number} id 
          * @param {UserUpdate} userUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateUserByRole(rolname: string, userUpdate: UserUpdate, options?: any): AxiosPromise<User> {
-            return localVarFp.updateUserByRole(rolname, userUpdate, options).then((request) => request(axios, basePath));
+        updateUserByRole(rolname: string, id: number, userUpdate: UserUpdate, options?: any): AxiosPromise<User> {
+            return localVarFp.updateUserByRole(rolname, id, userUpdate, options).then((request) => request(axios, basePath));
         },
         /**
          * Update own user.
@@ -2961,7 +6448,7 @@ export class UsersApi extends BaseAPI {
      * @summary Read Users
      * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
      * @param {string} [range] Format: &#x60;[start, end]&#x60;
-     * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
@@ -2972,33 +6459,17 @@ export class UsersApi extends BaseAPI {
 
     /**
      * Retrieve users.
-     * @summary Read Users By Role
-     * @param {string} rolname 
-     * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
-     * @param {string} [range] Format: &#x60;[start, end]&#x60;
-     * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof UsersApi
-     */
-    public readUsersByRole(rolname: string, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).readUsersByRole(rolname, sort, range, filter, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve users.
      * @summary Read Users By Role Id
      * @param {string} rolname 
-     * @param {number} id 
      * @param {string} [sort] Format: &#x60;[\&quot;field_name\&quot;, \&quot;direction\&quot;]&#x60;
      * @param {string} [range] Format: &#x60;[start, end]&#x60;
-     * @param {string} [filter] Format: &#x60;{\&quot;k\&quot;: \&quot;v\&quot;}&#x60;
+     * @param {string} [filter] Format: &#x60;{\&quot;id\&quot;: 0}&#x60;
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public readUsersByRoleId(rolname: string, id: number, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).readUsersByRoleId(rolname, id, sort, range, filter, options).then((request) => request(this.axios, this.basePath));
+    public readUsersByRoleId(rolname: string, sort?: string, range?: string, filter?: string, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).readUsersByRoleId(rolname, sort, range, filter, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3018,13 +6489,14 @@ export class UsersApi extends BaseAPI {
      * Update a user by role.
      * @summary Update User By Role
      * @param {string} rolname 
+     * @param {number} id 
      * @param {UserUpdate} userUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public updateUserByRole(rolname: string, userUpdate: UserUpdate, options?: AxiosRequestConfig) {
-        return UsersApiFp(this.configuration).updateUserByRole(rolname, userUpdate, options).then((request) => request(this.axios, this.basePath));
+    public updateUserByRole(rolname: string, id: number, userUpdate: UserUpdate, options?: AxiosRequestConfig) {
+        return UsersApiFp(this.configuration).updateUserByRole(rolname, id, userUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
