@@ -1,4 +1,4 @@
-import { LoginApi, Configuration, UsersApi, TasksApi } from "../generated";
+import {LoginApi, Configuration, UsersApi, TasksApi, DisciplinesApi} from "../generated";
 
 const readApiBaseFromEnv = (): string => {
   // Get API base URL from env
@@ -32,3 +32,5 @@ const apiConfig: Configuration = new Configuration({
 export const authApi: LoginApi = new LoginApi(apiConfig);
 export const userApi: UsersApi = new UsersApi(apiConfig);
 export const taskApi: TasksApi = new TasksApi(apiConfig);
+
+export const disciplinesApi: DisciplinesApi = new DisciplinesApi(apiConfig);
