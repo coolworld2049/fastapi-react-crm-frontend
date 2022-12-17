@@ -1,12 +1,16 @@
 import {
-  AutocompleteInput, ChipField,
+  AutocompleteInput,
+  ChipField,
   Datagrid,
-  List, ReferenceField,
+  Edit,
+  List,
+  ReferenceField,
   ReferenceInput,
+  ReferenceManyField,
+  SimpleForm,
   TextField,
   TextInput
 } from 'react-admin';
-import { Edit, SimpleForm } from 'react-admin';
 
 export const TypedDisciplineList = () => (
   <List>
@@ -16,7 +20,7 @@ export const TypedDisciplineList = () => (
         <TextField source="title" />
       </ReferenceField>
       <ReferenceField source="campus_id" reference="campuses">
-        <TextField source="id" />
+        <ChipField source="id" />
       </ReferenceField>
       <TextField source="classroom_number" />
       <ChipField source="type" />
@@ -48,4 +52,17 @@ export const TypedDisciplineEdit = () => (
       <TextInput source="type" />
     </SimpleForm>
   </Edit>
+);
+export const PanelTypedDisciplineCampus = (props: any) => (
+  <ReferenceManyField source="discipline_id" reference="typed_disciplines" target="discipline_id">
+    <Datagrid bulkActionButtons={false}>
+      <ReferenceField label="Detailed Discipline" source="discipline_id" reference="disciplines"
+                      link={(record, reference) => `/typed_disciplines/${record.id}/show`}>
+        <TextField source="title"/>
+      </ReferenceField>
+      <TextField source="type"/>
+      <TextField source="classroom_number"/>
+      <TextField source="campus_id"/>
+    </Datagrid>
+  </ReferenceManyField>
 );

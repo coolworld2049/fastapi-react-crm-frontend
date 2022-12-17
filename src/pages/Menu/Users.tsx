@@ -13,19 +13,10 @@ import {
   ChipField,
   AutocompleteInput,
   ReferenceInput,
-  FilterLiveSearch, required, NumberInput,
+  FilterLiveSearch, required, NumberInput, SimpleShowLayout,
 } from "react-admin";
 import {user_sx} from "../../components/commonStyles";
 
-
-
-export const filterToQueryCompany = (searchText: any) => ({ name: `${searchText}` });
-
-export const UserRoleInput = (props: any) => (
-  <ReferenceInput {...props} source="role" reference="classifiers/user_role" >
-      <AutocompleteInput {...props} source="id" label='Role' />
-  </ReferenceInput>
-);
 
 /*
 const exporter = (users: any) => {
@@ -41,6 +32,21 @@ const exporter = (users: any) => {
     });
 };
 */
+
+export const UserRoleInput = (props: any) => (
+  <ReferenceInput {...props} source="role" reference="classifiers/user_role" >
+      <AutocompleteInput {...props} source="id" optionText="name" label='Role' />
+  </ReferenceInput>
+);
+
+const UserPanel = (props: any) => (
+  <SimpleShowLayout {...props}>
+    <TextField source="full_name"/>
+    <TextField source="age"/>
+    <TextField source="phone"/>
+  </SimpleShowLayout>
+)
+
 export const UserList = (props: any) => {
 
   const userFilters = [
@@ -51,15 +57,12 @@ export const UserList = (props: any) => {
     <UserRoleInput/>
   ];
   return (
-    <List filters={userFilters} >
-      <Datagrid rowClick="edit">
+    <List {...props} filters={userFilters} >
+      <Datagrid rowClick="edit" expand={UserPanel}>
         <TextField source="id"/>
-        <TextField source="full_name"/>
         <TextField source="username"/>
         <ChipField  source="role"/>
         <EmailField source="email"/>
-        <TextField source="age"/>
-        <TextField source="phone"/>
         <BooleanField source="is_active"/>
       </Datagrid>
     </List>
@@ -72,14 +75,11 @@ export const UserEdit = (props: any) => (
       <TextInput source="id" disabled sx={user_sx} />
       <TextInput source="full_name" sx={user_sx}  />
       <TextInput source="username" sx={user_sx}  />
-      <ReferenceInput source="role" reference="classifiers/user_role" sx={user_sx} >
-          <AutocompleteInput source="id" label='Role' sx={user_sx} />
-      </ReferenceInput>
+      <UserRoleInput/>
       <TextInput source="email" sx={user_sx} />
       <TextInput source="full_name" sx={user_sx} />
       <NumberInput source="age" min={14} max={100}/>
       <TextInput source="phone" sx={user_sx} />
-      <UserRoleInput/>
       <BooleanInput {...props} source="is_active"  defaultValue={true} sx={user_sx} />
     </SimpleForm>
   </Edit>
@@ -88,7 +88,7 @@ export const UserEdit = (props: any) => (
 
 export const UserCreate = (props: any) => {
   return (
-    <Create redirect="list">
+    <Create {...props} redirect="list">
       <SimpleForm mode="onBlur" reValidateMode="onBlur">
         <TextInput source="email" sx={user_sx} validate={required()} />
         <PasswordInput source="password" sx={user_sx} validate={required()} />

@@ -23,13 +23,13 @@ import {dateParser} from "../../components/MyDate/CustomDate";
 
 export const TaskStatusInput = (props: any) => (
   <ReferenceInput {...props} source="status" reference="classifiers/task_status" >
-      <AutocompleteInput {...props} source="id" label='Status' sx={user_sx} />
+      <AutocompleteInput {...props} source="id" optionText="name" label='Status' sx={user_sx} />
   </ReferenceInput>
 );
 
 export const TaskPriorityInput = (props: any) => (
   <ReferenceInput {...props} source="priority" reference="classifiers/task_priority" >
-      <AutocompleteInput {...props} source="id" label='Priority' />
+      <AutocompleteInput {...props} source="id" optionText="name" label='Priority' />
   </ReferenceInput>
 );
 
@@ -76,7 +76,7 @@ export const TaskList = (props: any) => {
   ];
   return (
     <List filters={taskFilters}>
-      <Datagrid rowClick="edit" expand={<TaskPanel/>} expandSingle>
+      <Datagrid rowClick="edit" expand={<TaskPanel/>} >
         <TextField source="id"/>
         <ReferenceField source="teacher_id" reference="teachers" >
           <ReferenceField source="user_id" reference="users/role/teachers">

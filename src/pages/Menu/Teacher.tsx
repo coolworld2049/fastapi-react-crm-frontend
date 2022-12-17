@@ -1,34 +1,37 @@
 import {
   AutocompleteInput,
-  ChipField,
   Datagrid, List,
-  ReferenceField,
-  SimpleShowLayout,
+  ReferenceField, ReferenceManyField, SimpleShowLayout,
   TextField
 } from 'react-admin';
 import { Edit, ReferenceInput, SimpleForm } from 'react-admin';
 
-const TeacherPanel = (props: any) => (
-  <SimpleShowLayout {...props}>
-    <ReferenceField source="discipline_id" reference="disciplines">
-      <ChipField source="title" />
-    </ReferenceField>
-  </SimpleShowLayout>
-)
+export const PanelTeacherDiscipline = (props: any) => (
+  <ReferenceManyField  source="id"
+                       reference="teacher_study_group_disciplines"
+                       target="id">
+    <Datagrid bulkActionButtons={false}>
+      <ReferenceManyField  source="id"
+                           reference="teachers"
+                           target="id">
+        <ReferenceField source="id" reference="disciplines">
+            <TextField source="title" />
+        </ReferenceField>
+      </ReferenceManyField>
+    </Datagrid>
+  </ReferenceManyField>
+);
 
 
 export const TeacherList = () => (
-    <List>
-      <Datagrid rowClick="edit" expand={TeacherPanel} expandSingle>
-        <TextField source="id" />
-        <ReferenceField source="user_id" reference="users/role/teachers">
-          <TextField source="email" />
-        </ReferenceField>
-        <ReferenceField source="discipline_id" reference="disciplines">
-          <ChipField source="title" />
-        </ReferenceField>
-      </Datagrid>
-    </List>
+  <List>
+    <Datagrid rowClick="edit" expand={PanelTeacherDiscipline} expandSingle>
+      <TextField source="id" />
+      <ReferenceField source="user_id" reference="users/role/teachers">
+        <TextField source="email" />
+      </ReferenceField>
+    </Datagrid>
+  </List>
 );
 
 
@@ -41,7 +44,7 @@ export const TeacherEdit = () => (
         <ReferenceInput source="user_id" reference="users/role/teachers">
           <TextField source="email" />
         </ReferenceInput>
-        <ReferenceInput source="discipline_id" reference="disciplines">
+        <ReferenceInput source="discipline_typed_id" reference="disciplines">
           <AutocompleteInput source="title" optionText="title" optionValue="id"/>
         </ReferenceInput>
       </SimpleForm>

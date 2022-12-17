@@ -6,7 +6,7 @@ import {
   Logout,
   defaultTheme,
   ToggleThemeButton,
-  usePermissions, TextField
+  usePermissions
 } from "react-admin";
 import { ProfileProvider } from "../pages/Profile/ProfileEdit";
 import SettingsIcon from "@mui/icons-material/Settings";
