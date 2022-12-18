@@ -3,8 +3,16 @@ import { Edit, SimpleForm, TextInput } from 'react-admin';
 
 export const AssessmentInput = (props: any) => (
   <ReferenceInput {...props} source="assessment" reference="classifiers/type_assessment" >
-      <AutocompleteInput {...props} source="id" label='Assessment' />
+      <AutocompleteInput {...props} source="id" optionText="name" label='Assessment' />
   </ReferenceInput>
+);
+
+export const DisciplinePanel= () => (
+  <Datagrid rowClick="edit">
+    <TextField source="id" />
+    <TextField source="title" />
+    <ChipField source="assessment" />
+  </Datagrid>
 );
 
 export const DisciplineList = () => (

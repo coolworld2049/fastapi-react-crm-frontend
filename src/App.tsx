@@ -13,12 +13,17 @@ import {dataProvider} from "./providers/dataProvider";
 import Moment from 'react-moment';
 import {StudentEdit, StudentList} from "./pages/Menu/Student";
 import {TeacherEdit, TeacherList} from "./pages/Menu/Teacher";
-import {Study_groupCreate, Study_groupEdit, Study_groupList} from "./pages/Menu/StudyGroup";
+import {StudyGroupCreate, StudyGroupEdit, StudyGroupList} from "./pages/Menu/StudyGroup";
 import {CampusCreate, CampusEdit, CampusList} from "./pages/Menu/Campus";
 import {TypedDisciplineEdit, TypedDisciplineList} from "./pages/Menu/TypedDiscipline";
 import {TaskStudentEdit, TaskStudentList} from "./pages/Menu/TaskStudent";
 import {TaskStoreEdit, TaskStoreList} from "./pages/Menu/TaskStore";
 import {DisciplineCreate, DisciplineEdit, DisciplineList} from "./pages/Menu/Discipline";
+import SchoolIcon from '@mui/icons-material/School';
+import GroupIcon from '@mui/icons-material/Group';
+import BusinessIcon from '@mui/icons-material/Business';
+import CloudIcon from '@mui/icons-material/Cloud';
+import WorkIcon from '@mui/icons-material/Work';
 
 // Sets the moment instance to use.
 Moment.globalMoment = require('moment');
@@ -71,7 +76,7 @@ const App = () => {
         list={StudentList}
         edit={StudentEdit}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={SchoolIcon}
       />
       <Resource
         options={{ label: "Teachers" }}
@@ -79,16 +84,16 @@ const App = () => {
         list={TeacherList}
         edit={TeacherEdit}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={SchoolIcon}
       />
       <Resource
         options={{ label: "Study Groups" }}
         name="study_groups"
-        list={Study_groupList}
-        edit={Study_groupEdit}
-        create={Study_groupCreate}
+        list={StudyGroupList}
+        edit={StudyGroupEdit}
+        create={StudyGroupCreate}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={GroupIcon}
       />
       <Resource
         options={{ label: "Campus" }}
@@ -97,7 +102,7 @@ const App = () => {
         edit={CampusEdit}
         create={CampusCreate}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={BusinessIcon}
       />
       <Resource
         options={{ label: "Disciplines" }}
@@ -106,7 +111,7 @@ const App = () => {
         edit={DisciplineEdit}
         create={DisciplineCreate}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={WorkIcon}
       />
       <Resource
         options={{ label: "Detailed Disciplines" }}
@@ -114,7 +119,7 @@ const App = () => {
         list={TypedDisciplineList}
         edit={TypedDisciplineEdit}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={WorkIcon}
       />
       <Resource
         options={{ label: "Tasks" }}
@@ -139,7 +144,7 @@ const App = () => {
         list={TaskStoreList}
         edit={TaskStoreEdit}
         show={ShowGuesser}
-        icon={PersonIcon}
+        icon={CloudIcon}
       />
     </Admin>
   );

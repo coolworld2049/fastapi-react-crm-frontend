@@ -1,17 +1,34 @@
-import { Datagrid, DateField, List, NumberField, TextField } from 'react-admin';
+import {
+    AutocompleteInput, ChipField,
+    Datagrid,
+    DateField,
+    List,
+    NumberField, NumberInput,
+    ReferenceField,
+    ReferenceInput, RichTextField, SimpleShowLayout,
+    TextField
+} from 'react-admin';
 import { DateInput, Edit, SimpleForm, TextInput } from 'react-admin';
+import {RichTextInput} from "ra-input-rich-text";
+
+const TaskStudentPanel = (props: any) => (
+  <SimpleShowLayout {...props}>
+    <RichTextField source="comment" />
+    <RichTextField source="feedback" />
+  </SimpleShowLayout>
+)
 
 export const TaskStudentList = () => (
     <List>
-        <Datagrid rowClick="edit">
+        <Datagrid rowClick="edit" expand={TaskStudentPanel}>
+            <ReferenceField source="id" reference="tasks" >
+              <TextField source="id"/>
+            </ReferenceField>
+            <ChipField source="grade"/>
             <NumberField source="points" />
-            <TextField source="comment" />
-            <TextField source="feedback" />
-            <TextField source="grade" />
-            <DateField source="deadline_date" />
-            <DateField source="start_date" />
-            <DateField source="completion_date" />
-            <TextField source="id" />
+            <DateField source="deadline_date" showTime={true}/>
+            <DateField source="start_date"  showTime={true}/>
+            <DateField source="completion_date" showTime={true}/>
         </Datagrid>
     </List>
 );
@@ -20,14 +37,16 @@ export const TaskStudentList = () => (
 export const TaskStudentEdit = () => (
     <Edit>
         <SimpleForm>
-            <DateInput source="points" />
-            <TextInput source="comment" />
-            <TextInput source="feedback" />
-            <TextInput source="grade" />
+            <TextInput source="id" disabled/>
+            <NumberInput source="points" min={0} max={25}/>
+            <RichTextInput source="comment" />
+            <RichTextInput source="feedback" />
+            <ReferenceInput source="grade" reference="classifiers/student_task_grade" >
+              <AutocompleteInput source="id"/>
+            </ReferenceInput>
             <DateInput source="deadline_date" />
             <DateInput source="start_date" />
             <DateInput source="completion_date" />
-            <TextInput source="id" />
         </SimpleForm>
     </Edit>
 );
