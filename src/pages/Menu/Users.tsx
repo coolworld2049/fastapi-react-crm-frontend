@@ -16,6 +16,8 @@ import {
   FilterLiveSearch, required, NumberInput, SimpleShowLayout,
 } from "react-admin";
 import {user_sx} from "../../components/commonStyles";
+import PublicIcon from '@mui/icons-material/Public';
+import PublicOffIcon from '@mui/icons-material/PublicOff';
 
 
 /*
@@ -33,17 +35,21 @@ const exporter = (users: any) => {
 };
 */
 
+
 export const UserRoleInput = (props: any) => (
-  <ReferenceInput {...props} source="role" reference="classifiers/user_role" >
-      <AutocompleteInput {...props} source="id" optionText="name" label='Role' />
+  <ReferenceInput {...props} source="role" reference="classifiers/user_role">
+    <AutocompleteInput {...props} source="id" optionText="name" label='Role'/>
   </ReferenceInput>
 );
 
+
+
 const UserPanel = (props: any) => (
-  <SimpleShowLayout {...props}>
+  <SimpleShowLayout>
     <TextField source="full_name"/>
     <TextField source="age"/>
     <TextField source="phone"/>
+    <BooleanField source="is_active" />
   </SimpleShowLayout>
 )
 
@@ -58,12 +64,12 @@ export const UserList = (props: any) => {
   ];
   return (
     <List {...props} filters={userFilters} >
-      <Datagrid rowClick="edit" expand={UserPanel}>
+      <Datagrid rowClick="edit" expand={UserPanel} expandSingle={true}>
         <TextField source="id"/>
+        <EmailField source="email" />
         <TextField source="username"/>
         <ChipField  source="role"/>
-        <EmailField source="email"/>
-        <BooleanField source="is_active"/>
+        <BooleanField source="is_online" TrueIcon={PublicIcon} FalseIcon={PublicOffIcon}/>
       </Datagrid>
     </List>
   )

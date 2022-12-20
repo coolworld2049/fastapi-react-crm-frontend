@@ -1,7 +1,5 @@
 import {
-  AutocompleteInput,
-  Datagrid,
-  List,
+  AutocompleteInput, Datagrid, List,
   ReferenceField, SimpleShowLayout,
   TextField,
   UrlField, WithRecord
@@ -11,8 +9,8 @@ import {Edit, ReferenceInput, SimpleForm, TextInput} from 'react-admin';
 const TaskStorePanel = (props: any) => (
   <SimpleShowLayout {...props}>
     <TextField source="filename"/>
-    <WithRecord label="size" render={(record) => <span>{formatBytes(record.size)}</span>} />
-    <TextField source="media_type"/>
+    <WithRecord label="Size" render={(record) => <span>{formatBytes(record.size)}</span>} />
+    <TextField source="media_type" />
   </SimpleShowLayout>
 )
 
@@ -23,17 +21,21 @@ function formatBytes(a: number, b = 2) {
 }
 
 
-export const TaskStoreList = () => (
-  <List>
-    <Datagrid rowClick="edit" expand={TaskStorePanel}>
-      <ReferenceField source="task_id" reference="tasks" link="show">
-        <TextField source="id"/>
-      </ReferenceField>
-      <UrlField source="url"/>
-      <TextField source="size" label={"Size (bytes)"}/>
-    </Datagrid>
-  </List>
-);
+export const TaskStoreList = () => {
+  return (
+    <List>
+      <Datagrid rowClick="edit" expand={TaskStorePanel}>
+        <ReferenceField source="task_id" reference="tasks" link="show">
+          <TextField source="title"/>
+          <TextField source="study_group_cipher_id"/>
+          <TextField source="student_id"/>
+        </ReferenceField>
+        <UrlField source="url"/>
+        <TextField source="size" label={"Size (bytes)"}/>
+      </Datagrid>
+    </List>
+  )
+};
 
 
 export const TaskStoreEdit = () => (

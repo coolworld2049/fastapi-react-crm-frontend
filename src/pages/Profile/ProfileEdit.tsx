@@ -14,7 +14,7 @@ import {
   usePermissions,
   useRedirect,
   Toolbar,
-  SaveButton,
+  SaveButton, NumberInput,
 } from "react-admin";
 import { userApi } from "../../providers/env";
 
@@ -94,9 +94,11 @@ export const ProfileEdit = ({ ...props }) => {
     >
       <SimpleForm record={identity ? identity : {}} toolbar={<CustomToolbar />}>
         <TextInput source="email" />
-        <TextInput source="full_name"/>
         <TextInput source="username" />
+        <TextInput source="role"/>
+        <TextInput source="full_name" />
         <TextInput source="phone" />
+        <NumberInput source="age" min={14} max={100}/>
       </SimpleForm>
     </SaveContextProvider>
   );

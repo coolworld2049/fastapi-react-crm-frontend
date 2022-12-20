@@ -1,44 +1,30 @@
-import { useCreateSuggestionContext } from 'react-admin';
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    TextField,
-} from '@mui/material';
+import {useCreateSuggestionContext} from "react-admin";
 import React from "react";
-import {campusesApi} from "../../providers/env";
+import {studyGroupCiphersApi} from "../../providers/env";
+import {Button, Dialog, DialogActions, DialogContent} from "@mui/material";
+import TextField from "@mui/material/TextField";
 
-
-export const CreateCampusOption = () => {
+export const StudyGroupCipherOption = () => {
     const { filter, onCancel, onCreate } = useCreateSuggestionContext();
     const [cipher, setCipher] = React.useState(filter || '');
-    const [address, setAddress] = React.useState(filter || '');
 
     const handleSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
-        const newOption = { cph: cipher, addr: address };
-        campusesApi.createCampus({id: newOption.cph, address: newOption.addr}).then(r => {
+        const newOption = { cph: cipher };
+        studyGroupCiphersApi.createStudyGroupCipher({id: newOption.cph}).then(r => {
             setCipher('');
-            setAddress('');
             onCreate(newOption);
         })
     };
 
     return (
-        <Dialog open onClose={onCancel}>
+        <Dialog onClose={onCancel} open={true}>
             <form onSubmit={handleSubmit}>
                 <DialogContent>
                     <TextField
                         label="Cipher"
                         value={cipher}
                         onChange={event => setCipher(event.target.value)}
-                        autoFocus
-                    />
-                    <TextField
-                        label="Address"
-                        value={address}
-                        onChange={event => setAddress(event.target.value)}
                         autoFocus
                     />
                 </DialogContent>

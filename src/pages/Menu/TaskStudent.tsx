@@ -21,8 +21,13 @@ const TaskStudentPanel = (props: any) => (
 export const TaskStudentList = () => (
     <List>
         <Datagrid rowClick="edit" expand={TaskStudentPanel}>
-            <ReferenceField source="id" reference="tasks" >
-              <TextField source="id"/>
+            <ReferenceField source="id" reference="tasks" link="show" >
+                              <TextField source="id"/>
+            </ReferenceField>
+            <ReferenceField source="id" reference="tasks" link="show" >
+              <ReferenceField source="student_id" reference="users/role/students">
+                <TextField source="email"/>
+              </ReferenceField>
             </ReferenceField>
             <ChipField source="grade"/>
             <NumberField source="points" />

@@ -6,8 +6,7 @@ import {
   List,
   ReferenceField,
   ReferenceInput,
-  ReferenceManyField,
-  SimpleForm,
+  ReferenceManyField, SimpleForm,
   SimpleShowLayout,
   TextField
 } from 'react-admin';
@@ -18,7 +17,11 @@ export const PanelStudentDiscipline = (props: any) => (
   <ReferenceManyField  source="study_group_cipher_id"
                        reference="study_group_disciplines"
                        target="study_group_cipher_id">
-    <Datagrid bulkActionButtons={false} expand={PanelTypedDisciplineCampus} expandSingle>
+    <Datagrid bulkActionButtons={false}
+              expand={PanelTypedDisciplineCampus({
+                source: 'discipline_id', reference: 'typed_disciplines', target: 'discipline_id'
+              })}
+              expandSingle>
       <ReferenceManyField source="discipline_id"
                           reference="typed_disciplines"
                           target="discipline_id" >
@@ -31,19 +34,23 @@ export const PanelStudentDiscipline = (props: any) => (
     </Datagrid>
   </ReferenceManyField>
 );
-
-export const StudentList = () => (
-  <List>
-    <Datagrid rowClick="edit" expand={PanelStudentDiscipline} expandSingle>
-      <ReferenceField source="id" reference="users/role/students">
-        <TextField source="email" />
-      </ReferenceField>
-      <ReferenceField source="study_group_cipher_id" reference="study_group_ciphers">
-        <ChipField source="id" />
-      </ReferenceField>
-    </Datagrid>
-  </List>
-);
+export const StudentList = () => {
+  return (
+    <List>
+      <Datagrid rowClick="edit" expand={PanelStudentDiscipline} expandSingle>
+        <ReferenceField source="id"
+                        reference="users/role/students"
+                        link={(record, reference) => `/students/${record.id}/show`}>
+          <TextField source="email"/>
+          <ChipField source="role"/>
+        </ReferenceField>
+        <ReferenceField source="study_group_cipher_id" reference="study_group_ciphers">
+          <ChipField source="id"/>
+        </ReferenceField>
+      </Datagrid>
+    </List>
+  )
+};
 
 export const StudentEdit = () => (
   <Edit>

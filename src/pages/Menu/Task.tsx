@@ -37,6 +37,7 @@ export const TaskPriorityInput = (props: any) => (
 const TaskPanel = (props: any) => (
   <SimpleShowLayout {...props}>
     <RichTextField {...props} source="description" sx={{whiteSpace: 'pre-wrap'}}/>
+    <ChipField source="priority"/>
     <DateField source="create_date"  showTime={true}/>
     <DateField source="expiration_date" showTime={true}/>
   </SimpleShowLayout>
@@ -80,17 +81,16 @@ export const TaskList = (props: any) => {
         <TextField source="id"/>
         <ReferenceField source="teacher_id" reference="teachers" >
           <ReferenceField source="user_id" reference="users/role/teachers">
-            <ChipField source="email"/>
+            <TextField source="email"/>
           </ReferenceField>
         </ReferenceField>
-        <ReferenceField source="student_id" reference="users/role/students">
-          <ChipField source="email"/>
+        <ReferenceField source="student_id" reference="users/role/students" link={(record, reference) => `/students/${record.student_id}/show`}>
+          <TextField source="email"/>
         </ReferenceField>
         <ReferenceField source="study_group_cipher_id" reference="study_group_ciphers" >
           <ChipField source="id"/>
         </ReferenceField>
         <TextField source="title"/>
-        <ChipField source="priority"/>
         <ChipField source="status"/>
         <DateField source="create_date" label={"Create date"} showTime={true}/>,
         <DateField source="expiration_date" label={"Expiration date"} showTime={true}/>,

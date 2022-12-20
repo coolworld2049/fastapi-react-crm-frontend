@@ -1,4 +1,4 @@
-import {Admin, CustomRoutes, Resource, ShowGuesser} from "react-admin";
+import {Admin, CustomRoutes, ListGuesser, Resource, ShowGuesser} from "react-admin";
 import {Route} from "react-router";
 import MyLayout from "./components/AdminLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -14,7 +14,6 @@ import Moment from 'react-moment';
 import {StudentEdit, StudentList} from "./pages/Menu/Student";
 import {TeacherEdit, TeacherList} from "./pages/Menu/Teacher";
 import {StudyGroupCreate, StudyGroupEdit, StudyGroupList} from "./pages/Menu/StudyGroup";
-import {CampusCreate, CampusEdit, CampusList} from "./pages/Menu/Campus";
 import {TypedDisciplineEdit, TypedDisciplineList} from "./pages/Menu/TypedDiscipline";
 import {TaskStudentEdit, TaskStudentList} from "./pages/Menu/TaskStudent";
 import {TaskStoreEdit, TaskStoreList} from "./pages/Menu/TaskStore";
@@ -24,6 +23,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import BusinessIcon from '@mui/icons-material/Business';
 import CloudIcon from '@mui/icons-material/Cloud';
 import WorkIcon from '@mui/icons-material/Work';
+import {StudyGroupCipherCreate, StudyGroupCipherEdit, StudyGroupCipherList} from "./pages/Menu/StudyGroupCipher";
 
 // Sets the moment instance to use.
 Moment.globalMoment = require('moment');
@@ -62,7 +62,7 @@ const App = () => {
       </CustomRoutes>
 
       <Resource
-        options={{ label: "Users" }}
+        options={{ label: "User" }}
         name="users"
         list={UserList}
         edit={UserEdit}
@@ -71,7 +71,7 @@ const App = () => {
         icon={PersonIcon}
       />
       <Resource
-        options={{ label: "Students" }}
+        options={{ label: "Student" }}
         name="students"
         list={StudentList}
         edit={StudentEdit}
@@ -79,7 +79,7 @@ const App = () => {
         icon={SchoolIcon}
       />
       <Resource
-        options={{ label: "Teachers" }}
+        options={{ label: "Teacher" }}
         name="teachers"
         list={TeacherList}
         edit={TeacherEdit}
@@ -87,7 +87,7 @@ const App = () => {
         icon={SchoolIcon}
       />
       <Resource
-        options={{ label: "Study Groups" }}
+        options={{ label: "Study Group" }}
         name="study_groups"
         list={StudyGroupList}
         edit={StudyGroupEdit}
@@ -96,16 +96,23 @@ const App = () => {
         icon={GroupIcon}
       />
       <Resource
+        options={{ label: "Study Group Cipher" }}
+        name="study_group_ciphers"
+        list={StudyGroupCipherList}
+        edit={StudyGroupCipherEdit}
+        create={StudyGroupCipherCreate}
+        show={ShowGuesser}
+        icon={GroupIcon}
+      />
+      <Resource
         options={{ label: "Campus" }}
         name="campuses"
-        list={CampusList}
-        edit={CampusEdit}
-        create={CampusCreate}
+        list={ListGuesser}
         show={ShowGuesser}
         icon={BusinessIcon}
       />
       <Resource
-        options={{ label: "Disciplines" }}
+        options={{ label: "Discipline" }}
         name="disciplines"
         list={DisciplineList}
         edit={DisciplineEdit}
@@ -114,7 +121,7 @@ const App = () => {
         icon={WorkIcon}
       />
       <Resource
-        options={{ label: "Detailed Disciplines" }}
+        options={{ label: "Teacher Discipline" }}
         name="typed_disciplines"
         list={TypedDisciplineList}
         edit={TypedDisciplineEdit}
@@ -122,7 +129,7 @@ const App = () => {
         icon={WorkIcon}
       />
       <Resource
-        options={{ label: "Tasks" }}
+        options={{ label: "Task" }}
         name="tasks"
         list={TaskList}
         edit={TaskEdit}
@@ -131,7 +138,7 @@ const App = () => {
         icon={AssignmentIcon}
       />
       <Resource
-        options={{ label: "Student Tasks" }}
+        options={{ label: "Student Task" }}
         name="task_students"
         list={TaskStudentList}
         edit={TaskStudentEdit}
