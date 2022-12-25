@@ -1,10 +1,10 @@
 import {useCreateSuggestionContext} from "react-admin";
 import React from "react";
-import {studyGroupCiphersApi} from "../../providers/env";
+import {studyGroupCiphersApi} from "../providers/env";
 import {Button, Dialog, DialogActions, DialogContent} from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-export const StudyGroupCipherOption = () => {
+export const StudyGroupCipherOptionCreate = () => {
     const { filter, onCancel, onCreate } = useCreateSuggestionContext();
     const [cipher, setCipher] = React.useState(filter || '');
 
@@ -14,7 +14,7 @@ export const StudyGroupCipherOption = () => {
         studyGroupCiphersApi.createStudyGroupCipher({id: newOption.cph}).then(r => {
             setCipher('');
             onCreate(newOption);
-        })
+        }).catch(e => setCipher(e))
     };
 
     return (

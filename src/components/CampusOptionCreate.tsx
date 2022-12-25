@@ -1,4 +1,4 @@
-import { useCreateSuggestionContext } from 'react-admin';
+import {useCreateSuggestionContext, useNotify} from 'react-admin';
 import {
     Button,
     Dialog,
@@ -7,10 +7,11 @@ import {
     TextField,
 } from '@mui/material';
 import React from "react";
-import {campusesApi} from "../../providers/env";
+import {campusesApi} from "../providers/env";
 
 
-export const CreateCampusOption = () => {
+export const CampusOptionCreate = () => {
+    const notify = useNotify();
     const { filter, onCancel, onCreate } = useCreateSuggestionContext();
     const [cipher, setCipher] = React.useState(filter || '');
     const [address, setAddress] = React.useState(filter || '');
@@ -19,10 +20,20 @@ export const CreateCampusOption = () => {
         event.preventDefault();
         const newOption = { cph: cipher, addr: address };
         campusesApi.createCampus({id: newOption.cph, address: newOption.addr}).then(r => {
-            setCipher('');
-            setAddress('');
-            onCreate(newOption);
+            if (r.data.id){
+                setCipher(r.data.id);
+                setAddress(r.data.address);
+                onCreate(newOption);
+            }
+            else {
+                setCipher("");
+                setAddress("");
+            }
         })
+        .catch(e => notify(
+            e.response?.data?.detail || "Unknown error, please try again later",
+            { type: "error" }
+        ))
     };
 
     return (

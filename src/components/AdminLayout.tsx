@@ -52,6 +52,7 @@ const MyAppBar = (props: any) => (
 
 );
 
+//<ReactQueryDevtools initialIsOpen={false} />
 const MyLayout = (props: any) => (
   <ProfileProvider>
     <Layout {...props} appBar={MyAppBar} />

@@ -72,7 +72,7 @@ export const ProfileEdit = ({ ...props }) => {
           refreshProfile();
           return redirect("/");
         })
-        .catch((e) => {
+        .catch(e => {
           setSaving(false);
           notify(
             e.response?.data?.detail || "Unknown error, please try again later",
@@ -80,7 +80,7 @@ export const ProfileEdit = ({ ...props }) => {
           );
         });
     },
-    [notify, refreshProfile]
+    [notify]
   );
 
   if (isUserIdentityLoading) {
@@ -96,7 +96,7 @@ export const ProfileEdit = ({ ...props }) => {
         <TextInput source="email" />
         <TextInput source="username" />
         <TextInput source="role"/>
-        <TextInput source="full_name" />
+        <TextInput source="email" />
         <TextInput source="phone" />
         <NumberInput source="age" min={14} max={100}/>
       </SimpleForm>
