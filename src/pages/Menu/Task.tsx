@@ -1,7 +1,6 @@
 import {
   AutocompleteInput,
   ChipField,
-  Create,
   Datagrid,
   DateField,
   DateTimeInput,
@@ -18,7 +17,7 @@ import {
 } from "react-admin";
 import {RichTextInput} from 'ra-input-rich-text';
 import {task_sx, user_sx} from "../../components/commonStyles";
-import {dateParser} from "../../components/MyDate/CustomDate";
+import {dateParser} from "../../components/dateParser";
 
 
 export const TaskStatusInput = (props: any) => (
@@ -36,15 +35,14 @@ export const TaskPriorityInput = (props: any) => (
 
 const TaskPanel = (props: any) => (
   <SimpleShowLayout {...props}>
-    <RichTextField {...props} source="description" sx={{whiteSpace: 'pre-wrap'}}/>
-    <DateField source="create_date"  showTime={true}/>
-    <DateField source="expiration_date" showTime={true}/>
+    <RichTextField  source="description" />
+    <DateField source="create_date" label={"Create date"} showTime={true}/>,
   </SimpleShowLayout>
 )
 
 export const TaskList = (props: any) => {
   const taskFilters = [
-    <ReferenceInput source="teacher_id" reference="users/role/teachers" >
+    <ReferenceInput source="teacher_id" reference="users/role/teacher" >
       <AutocompleteInput
         optionText={customOptionText}
         filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `teacher` })}
@@ -78,22 +76,21 @@ export const TaskList = (props: any) => {
     <List filters={taskFilters}>
       <Datagrid rowClick="edit" expand={<TaskPanel/>} >
         <TextField source="id"/>
-        <ReferenceField source="teacher_id" reference="teachers" >
-          <ReferenceField source="user_id" reference="users/role/teachers">
-            <ChipField source="email"/>
-          </ReferenceField>
+        <ReferenceField source="teacher_user_id"
+                        reference="users/role/teacher"
+                        link={(record) => `/teachers/${record.teacher_user_id}/show`}
+        >
+          <TextField source="email"/>
+          <ChipField source="role"/>
         </ReferenceField>
-        <ReferenceField source="student_id" reference="users/role/students">
-          <ChipField source="email"/>
-        </ReferenceField>
-        <ReferenceField source="study_group_cipher_id" reference="study_group_ciphers" >
-          <ChipField source="id"/>
+        <ChipField source="teacher_role"/>
+        <ReferenceField source="teacher_discipline_id"
+                        reference="disciplines"
+                        link={(record) => `/disciplines/${record.teacher_discipline_id}/show`}
+        >
+          <ChipField source="title"/>
         </ReferenceField>
         <TextField source="title"/>
-        <ChipField source="priority"/>
-        <ChipField source="status"/>
-        <DateField source="create_date" label={"Create date"} showTime={true}/>,
-        <DateField source="expiration_date" label={"Expiration date"} showTime={true}/>,
       </Datagrid>
     </List>
   )};
@@ -137,38 +134,3 @@ export const TaskEdit = (props: any) => (
       </SimpleForm>
     </Edit>
 );
-
-export const TaskCreate = (props: any) => {
-  return (
-    <Create {...props} redirect="list">
-      <SimpleForm>
-        <ReferenceInput source="teacher_id" reference="users/role/teachers" >
-          <AutocompleteInput
-            optionText={customOptionText}
-            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: `teachers` })}
-             sx={task_sx}
-          />
-        </ReferenceInput>
-        <ReferenceInput source="study_group_cipher_id" reference="study_group_ciphers" >
-          <AutocompleteInput
-            optionText={(record: { id: any; }) => `${record.id}`}
-            filterToQuery={(searchText: any) => ({ id: `${searchText}` })}
-             sx={task_sx}
-          />
-        </ReferenceInput>
-        <ReferenceInput source="student_id" reference="users/role/students">
-          <AutocompleteInput
-            optionText={customOptionText}
-            filterToQuery={(searchText: any) => ({ email: `${searchText}`, role: ['student', 'student_leader', 'student_leader_assistant'] })}
-            sx={task_sx}
-          />
-        </ReferenceInput>
-        <TextInput source="title" sx={task_sx} />
-        <RichTextInput source="description" sx={task_sx} />
-        <TaskStatusInput {...props} sx={task_sx} />
-        <TaskPriorityInput {...props} sx={task_sx} />
-        <DateTimeInput source="expiration_date" parse={dateParser} sx={task_sx} />
-      </SimpleForm>
-    </Create>
-  );
-}

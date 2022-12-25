@@ -7,6 +7,6 @@ const httpClient = (url: string, options: any = {}) => {
     authenticated: true,
     token: `Bearer ${localStorage.getItem("token")}`,
   };
-  return fetchUtils.fetchJson(url, options);
+  return fetchUtils.fetchJson(url, options)
 };
 export const dataProvider = simpleRestProvider(`${basePath}/api/v1`, httpClient);

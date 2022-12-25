@@ -29,8 +29,8 @@ const authProvider = {
     return localStorage.getItem("token") ? Promise.resolve() : Promise.reject();
   },
   getPermissions: () => {
-    const role = JSON.parse(localStorage.getItem("permissions") || "{}");
-    return role ? Promise.resolve(role) : Promise.reject();
+    const permissions = JSON.parse(localStorage.getItem("permissions") || "{}");
+    return permissions ? Promise.resolve(permissions) : Promise.reject();
   },
   getIdentity: async (): Promise<UserIdentity> => {
     const resp = await userApi.readUserMe();

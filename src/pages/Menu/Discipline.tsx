@@ -1,26 +1,36 @@
-import {AutocompleteInput, ChipField, Create, Datagrid, List, ReferenceInput, TextField} from 'react-admin';
+import {
+	ChipField,
+	Create,
+	Datagrid,
+	List, ReferenceField,
+	ReferenceManyField, TextField
+} from 'react-admin';
 import { Edit, SimpleForm, TextInput } from 'react-admin';
+import {ListItem} from "@material-ui/core";
 
-export const AssessmentInput = (props: any) => (
-  <ReferenceInput {...props} source="assessment" reference="classifiers/type_assessment" >
-      <AutocompleteInput {...props} source="id" optionText="name" label='Assessment' />
-  </ReferenceInput>
-);
 
-export const DisciplinePanel= () => (
-  <Datagrid rowClick="edit">
-    <TextField source="id" />
-    <TextField source="title" />
-    <ChipField source="assessment" />
-  </Datagrid>
+export const PanelTeacherDiscipline = (props: any) => (
+	<ListItem >
+		<ReferenceManyField source="id" reference="teachers" target="discipline_id">
+			<Datagrid bulkActionButtons={false}>
+				<ReferenceField source="user_id"
+				                reference="users/role/teacher"
+				                label={"Teacher"}
+				                link={(record) => `/teachers/${record.user_id}/show`}
+				>
+					<TextField source="email" />
+					<ChipField source="role" />
+				</ReferenceField>
+				<ChipField source="role"/>
+			</Datagrid>
+		</ReferenceManyField>
+	</ListItem>
 );
 
 export const DisciplineList = () => (
   <List>
-    <Datagrid rowClick="edit">
-      <TextField source="id" />
+    <Datagrid rowClick="edit" bulkActionButtons={false} expand={PanelTeacherDiscipline}>
       <TextField source="title" />
-      <ChipField source="assessment" />
     </Datagrid>
   </List>
 );
@@ -29,16 +39,17 @@ export const DisciplineEdit = () => (
   <Edit>
     <SimpleForm>
       <TextInput source="title" />
-      <AssessmentInput source="assessment" />
     </SimpleForm>
   </Edit>
 );
 
+
+
 export const DisciplineCreate = () => (
-  <Create>
+  <Create resource="study_groups">
     <SimpleForm>
       <TextInput source="title" />
-      <AssessmentInput source="assessment" />
     </SimpleForm>
   </Create>
 );
+
