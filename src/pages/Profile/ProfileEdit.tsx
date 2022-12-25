@@ -95,8 +95,7 @@ export const ProfileEdit = ({ ...props }) => {
       <SimpleForm record={identity ? identity : {}} toolbar={<CustomToolbar />}>
         <TextInput source="email" />
         <TextInput source="username" />
-        <TextInput source="role"/>
-        <TextInput source="email" />
+        <TextInput source="role" disabled/>
         <TextInput source="phone" />
         <NumberInput source="age" min={14} max={100}/>
       </SimpleForm>

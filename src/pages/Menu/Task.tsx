@@ -134,37 +134,3 @@ export const TaskEdit = (props: any) => (
       </SimpleForm>
     </Edit>
 );
-/*
-export const TaskCreate = (props: any) => {
-  return (
-    <Create redirect="list">
-      <SimpleForm>
-        <ReferenceInput source="teacher_user_id" reference="users/role/teacher" >
-          <AutocompleteInput
-            optionText="email"
-            filterToQuery={(searchText: any) => ({ email: `${searchText}` })}
-            sx={task_sx}
-          />
-        </ReferenceInput>
-        <ReferenceInput source="teacher_role" reference="teachers" >
-          <AutocompleteInput
-            optionText="role"
-            filterToQuery={(searchText: any) => ({ email: `${searchText}` })}
-            sx={task_sx}
-          />
-        </ReferenceInput>
-        <ReferenceInput source="teacher_discipline_id" reference="teachers" >
-          <AutocompleteInput
-            optionText="title"
-            filterToQuery={(searchText: any) => ({ email: `${searchText}` })}
-            sx={task_sx}
-          />
-        </ReferenceInput>
-        <TextInput source="title" sx={task_sx} />
-        <RichTextInput source="description" sx={task_sx} />
-        <TaskPriorityInput {...props} sx={task_sx} />
-      </SimpleForm>
-    </Create>
-  );
-}
-*/

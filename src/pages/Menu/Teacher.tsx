@@ -149,12 +149,7 @@ export const TeacherTaskCreate = (props: any) => {
     <Create redirect="list">
       <SimpleForm>
 	      <ReferenceInput source="teacher_user_id" reference="users/me">
-          <AutocompleteInput
-            optionText="email"
-            optionValue="id"
-            sx={task_sx}
-            label={"Teacher"}
-          />
+          <TextInput source="id" disabled/>
         </ReferenceInput>
 	      <ReferenceInput source="teacher_role" reference="teachers/me">
           <AutocompleteInput
